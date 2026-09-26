@@ -1,0 +1,1 @@
+suite=nmos_6502_undoc_illegal_matrix result=PASS matched=97 differed=0 unclaimed=8 rows=105 soft_only=true Soft≠Physical

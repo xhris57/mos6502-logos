@@ -1,4 +1,4 @@
-.PHONY: witness witness-klaus twin-test asm
+.PHONY: witness witness-klaus witness-undoc twin-test asm
 
 # FIRST WITNESS — Soft≠Physical. Writes artifacts/witness-first.{json,txt}
 witness:
@@ -14,3 +14,8 @@ twin-test:
 
 asm:
 	python3 tools/asm.py programs/first_witness.asm 0x8000
+
+# Undoc/illegal NMOS matrix — Soft≠Physical. Writes artifacts/witness-undoc.{json,txt}
+# Digilent mutex Operator — NO flash. Unstable opcodes stay UNCLAIMED.
+witness-undoc:
+	go test ./tb/ -run TestUndocMatrix -count=1 -v

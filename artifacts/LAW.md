@@ -49,7 +49,7 @@ Interrupt edges (NMI one-shot, IRQ level∧¬I) sample before opcode fetch. Stac
 
 ## Documented official set (56 mnemonics × modes) — transitions
 
-Law tables below state **what changes** (register / bus / flags / cycles). Undocumented opcodes: twin policy = NOP/JAM stubs only (residual).
+Law tables below state **what changes** (register / bus / flags / cycles). Undocumented opcodes: stable NMOS composites (SLO/RLA/SRE/RRA/SAX/LAX/DCP/ISC/ANC/ALR/ARR(D=0)/AXS/USBC) + NOP/JAM claimed soft per artifacts/SOURCE-undoc.txt; unstable XAA/LAX#/AHX/SHY/SHX/TAS/LAS remain UNCLAIMED residual. Soft≠Physical.
 
 ### Loads / stores
 

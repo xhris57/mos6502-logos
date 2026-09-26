@@ -1,0 +1,1272 @@
+{
+  "suite": "nmos_6502_undoc_illegal_matrix",
+  "result": "PASS",
+  "matched": 97,
+  "differed": 0,
+  "unclaimed": 8,
+  "rows": 105,
+  "families": {
+    "AHX": {
+      "match": 0,
+      "diff": 0,
+      "unclaimed": 2
+    },
+    "ALR": {
+      "match": 1,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "ANC": {
+      "match": 2,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "ARR": {
+      "match": 1,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "AXS": {
+      "match": 1,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "DCP": {
+      "match": 7,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "ISC": {
+      "match": 7,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "JAM": {
+      "match": 12,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "LAS": {
+      "match": 0,
+      "diff": 0,
+      "unclaimed": 1
+    },
+    "LAX": {
+      "match": 6,
+      "diff": 0,
+      "unclaimed": 1
+    },
+    "NOP": {
+      "match": 27,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "RLA": {
+      "match": 7,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "RRA": {
+      "match": 7,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "SAX": {
+      "match": 4,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "SHX": {
+      "match": 0,
+      "diff": 0,
+      "unclaimed": 1
+    },
+    "SHY": {
+      "match": 0,
+      "diff": 0,
+      "unclaimed": 1
+    },
+    "SLO": {
+      "match": 7,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "SRE": {
+      "match": 7,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "TAS": {
+      "match": 0,
+      "diff": 0,
+      "unclaimed": 1
+    },
+    "USBC": {
+      "match": 1,
+      "diff": 0,
+      "unclaimed": 0
+    },
+    "XAA": {
+      "match": 0,
+      "diff": 0,
+      "unclaimed": 1
+    }
+  },
+  "notes": [
+    "Soft≠Physical — Digilent mutex Operator; NO flash",
+    "Sources: Graham oxyron opcodes02.html; masswerk.at illegal demystified; Visual6502 observation-cite only (no geometry)",
+    "Stable composites implemented: NOP/JAM/LAX/SAX/DCP/ISC/SLO/RLA/SRE/RRA/ANC/ALR/ARR(D=0)/AXS/USBC",
+    "UNCLAIMED residual: XAA $8B, LAX# $AB, AHX $93/$9F, SHY $9C, SHX $9E, TAS $9B, LAS $BB",
+    "ARR decimal-mode residual; Soft≠Physical"
+  ],
+  "soft_only": true,
+  "matrix": [
+    {
+      "op": 26,
+      "family": "NOP",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "2-cycle NOP",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "cyc=2 PC=8001"
+    },
+    {
+      "op": 58,
+      "family": "NOP",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "2-cycle NOP",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "cyc=2"
+    },
+    {
+      "op": 90,
+      "family": "NOP",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "2-cycle NOP",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "cyc=2"
+    },
+    {
+      "op": 122,
+      "family": "NOP",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "2-cycle NOP",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "cyc=2"
+    },
+    {
+      "op": 218,
+      "family": "NOP",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "2-cycle NOP",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "cyc=2"
+    },
+    {
+      "op": 250,
+      "family": "NOP",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "2-cycle NOP",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "cyc=2"
+    },
+    {
+      "op": 128,
+      "family": "NOP",
+      "mode": "imm",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "2-cycle NOP #imm",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "cyc=2 PC=8002"
+    },
+    {
+      "op": 130,
+      "family": "NOP",
+      "mode": "imm",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "2-cycle NOP #imm",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "cyc=2 PC=8002"
+    },
+    {
+      "op": 137,
+      "family": "NOP",
+      "mode": "imm",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "2-cycle NOP #imm",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "cyc=2 PC=8002"
+    },
+    {
+      "op": 194,
+      "family": "NOP",
+      "mode": "imm",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "2-cycle NOP #imm",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "cyc=2 PC=8002"
+    },
+    {
+      "op": 226,
+      "family": "NOP",
+      "mode": "imm",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "2-cycle NOP #imm",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "cyc=2 PC=8002"
+    },
+    {
+      "op": 4,
+      "family": "NOP",
+      "mode": "zp",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "3-cycle NOP zp",
+      "cycles_got": 3,
+      "cycles_ok": true,
+      "detail": "cyc=3"
+    },
+    {
+      "op": 68,
+      "family": "NOP",
+      "mode": "zp",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "3-cycle NOP zp",
+      "cycles_got": 3,
+      "cycles_ok": true,
+      "detail": "cyc=3"
+    },
+    {
+      "op": 100,
+      "family": "NOP",
+      "mode": "zp",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "3-cycle NOP zp",
+      "cycles_got": 3,
+      "cycles_ok": true,
+      "detail": "cyc=3"
+    },
+    {
+      "op": 20,
+      "family": "NOP",
+      "mode": "zpx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "4-cycle NOP zp,X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "cyc=4"
+    },
+    {
+      "op": 52,
+      "family": "NOP",
+      "mode": "zpx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "4-cycle NOP zp,X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "cyc=4"
+    },
+    {
+      "op": 84,
+      "family": "NOP",
+      "mode": "zpx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "4-cycle NOP zp,X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "cyc=4"
+    },
+    {
+      "op": 116,
+      "family": "NOP",
+      "mode": "zpx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "4-cycle NOP zp,X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "cyc=4"
+    },
+    {
+      "op": 212,
+      "family": "NOP",
+      "mode": "zpx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "4-cycle NOP zp,X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "cyc=4"
+    },
+    {
+      "op": 244,
+      "family": "NOP",
+      "mode": "zpx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "4-cycle NOP zp,X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "cyc=4"
+    },
+    {
+      "op": 12,
+      "family": "NOP",
+      "mode": "abs",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "4-cycle NOP abs",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "cyc=4"
+    },
+    {
+      "op": 28,
+      "family": "NOP",
+      "mode": "abx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "4(+1) NOP abs,X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "cyc=4"
+    },
+    {
+      "op": 60,
+      "family": "NOP",
+      "mode": "abx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "4(+1) NOP abs,X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "cyc=4"
+    },
+    {
+      "op": 92,
+      "family": "NOP",
+      "mode": "abx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "4(+1) NOP abs,X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "cyc=4"
+    },
+    {
+      "op": 124,
+      "family": "NOP",
+      "mode": "abx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "4(+1) NOP abs,X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "cyc=4"
+    },
+    {
+      "op": 220,
+      "family": "NOP",
+      "mode": "abx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "4(+1) NOP abs,X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "cyc=4"
+    },
+    {
+      "op": 252,
+      "family": "NOP",
+      "mode": "abx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "4(+1) NOP abs,X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "cyc=4"
+    },
+    {
+      "op": 2,
+      "family": "JAM",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "halt until reset",
+      "cycles_got": 0,
+      "cycles_ok": true,
+      "detail": "halt=true PC=8000/8000"
+    },
+    {
+      "op": 18,
+      "family": "JAM",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "halt until reset",
+      "cycles_got": 0,
+      "cycles_ok": true,
+      "detail": "halt=true PC=8000/8000"
+    },
+    {
+      "op": 34,
+      "family": "JAM",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "halt until reset",
+      "cycles_got": 0,
+      "cycles_ok": true,
+      "detail": "halt=true PC=8000/8000"
+    },
+    {
+      "op": 50,
+      "family": "JAM",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "halt until reset",
+      "cycles_got": 0,
+      "cycles_ok": true,
+      "detail": "halt=true PC=8000/8000"
+    },
+    {
+      "op": 66,
+      "family": "JAM",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "halt until reset",
+      "cycles_got": 0,
+      "cycles_ok": true,
+      "detail": "halt=true PC=8000/8000"
+    },
+    {
+      "op": 82,
+      "family": "JAM",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "halt until reset",
+      "cycles_got": 0,
+      "cycles_ok": true,
+      "detail": "halt=true PC=8000/8000"
+    },
+    {
+      "op": 98,
+      "family": "JAM",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "halt until reset",
+      "cycles_got": 0,
+      "cycles_ok": true,
+      "detail": "halt=true PC=8000/8000"
+    },
+    {
+      "op": 114,
+      "family": "JAM",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "halt until reset",
+      "cycles_got": 0,
+      "cycles_ok": true,
+      "detail": "halt=true PC=8000/8000"
+    },
+    {
+      "op": 146,
+      "family": "JAM",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "halt until reset",
+      "cycles_got": 0,
+      "cycles_ok": true,
+      "detail": "halt=true PC=8000/8000"
+    },
+    {
+      "op": 178,
+      "family": "JAM",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "halt until reset",
+      "cycles_got": 0,
+      "cycles_ok": true,
+      "detail": "halt=true PC=8000/8000"
+    },
+    {
+      "op": 210,
+      "family": "JAM",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "halt until reset",
+      "cycles_got": 0,
+      "cycles_ok": true,
+      "detail": "halt=true PC=8000/8000"
+    },
+    {
+      "op": 242,
+      "family": "JAM",
+      "mode": "impl",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "halt until reset",
+      "cycles_got": 0,
+      "cycles_ok": true,
+      "detail": "halt=true PC=8000/8000"
+    },
+    {
+      "op": 167,
+      "family": "LAX",
+      "mode": "zp",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "A,X←M NZ",
+      "cycles_got": 3,
+      "cycles_ok": true,
+      "detail": "A=C3 X=C3 P=A0 cyc=3"
+    },
+    {
+      "op": 183,
+      "family": "LAX",
+      "mode": "zpy",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "A,X←M NZ",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "A=00 X=00 cyc=4"
+    },
+    {
+      "op": 175,
+      "family": "LAX",
+      "mode": "abs",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "A,X←M",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "A=7E cyc=4"
+    },
+    {
+      "op": 191,
+      "family": "LAX",
+      "mode": "aby",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "A,X←M",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "A=11 cyc=4"
+    },
+    {
+      "op": 163,
+      "family": "LAX",
+      "mode": "izx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "A,X←M",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "A=55 cyc=6"
+    },
+    {
+      "op": 179,
+      "family": "LAX",
+      "mode": "izy",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "A,X←M",
+      "cycles_got": 5,
+      "cycles_ok": true,
+      "detail": "A=66 cyc=5"
+    },
+    {
+      "op": 135,
+      "family": "SAX",
+      "mode": "zp",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "M←A\u0026X",
+      "cycles_got": 3,
+      "cycles_ok": true,
+      "detail": "M=00 cyc=3"
+    },
+    {
+      "op": 151,
+      "family": "SAX",
+      "mode": "zpy",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "M←A\u0026X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "M=0A cyc=4"
+    },
+    {
+      "op": 143,
+      "family": "SAX",
+      "mode": "abs",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "M←A\u0026X",
+      "cycles_got": 4,
+      "cycles_ok": true,
+      "detail": "M=30 cyc=4"
+    },
+    {
+      "op": 131,
+      "family": "SAX",
+      "mode": "izx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "M←A\u0026X",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "M=04 cyc=6"
+    },
+    {
+      "op": 199,
+      "family": "DCP",
+      "mode": "zp",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "DEC+CMP",
+      "cycles_got": 5,
+      "cycles_ok": true,
+      "detail": "M=04 P=23 cyc=5"
+    },
+    {
+      "op": 207,
+      "family": "DCP",
+      "mode": "abs",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "DEC+CMP",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "M=0F P=23"
+    },
+    {
+      "op": 215,
+      "family": "DCP",
+      "mode": "zpx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "DEC+CMP",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "M=01 cyc=6"
+    },
+    {
+      "op": 223,
+      "family": "DCP",
+      "mode": "abx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "DEC+CMP 7c",
+      "cycles_got": 7,
+      "cycles_ok": true,
+      "detail": "M=07 cyc=7"
+    },
+    {
+      "op": 219,
+      "family": "DCP",
+      "mode": "aby",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "DEC+CMP 7c",
+      "cycles_got": 7,
+      "cycles_ok": true,
+      "detail": "M=07 cyc=7"
+    },
+    {
+      "op": 195,
+      "family": "DCP",
+      "mode": "izx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "DEC+CMP 8c",
+      "cycles_got": 8,
+      "cycles_ok": true,
+      "detail": "M=02 cyc=8"
+    },
+    {
+      "op": 211,
+      "family": "DCP",
+      "mode": "izy",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "DEC+CMP 8c",
+      "cycles_got": 8,
+      "cycles_ok": true,
+      "detail": "M=02 cyc=8"
+    },
+    {
+      "op": 231,
+      "family": "ISC",
+      "mode": "zp",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "INC+SBC",
+      "cycles_got": 5,
+      "cycles_ok": true,
+      "detail": "M=02 A=03 P=21 cyc=5"
+    },
+    {
+      "op": 239,
+      "family": "ISC",
+      "mode": "abs",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "INC+SBC",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "M=01 A=0F cyc=6"
+    },
+    {
+      "op": 247,
+      "family": "ISC",
+      "mode": "zpx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "INC+SBC",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "A=1F cyc=6"
+    },
+    {
+      "op": 255,
+      "family": "ISC",
+      "mode": "abx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "INC+SBC",
+      "cycles_got": 7,
+      "cycles_ok": true,
+      "detail": "A=1F cyc=7"
+    },
+    {
+      "op": 251,
+      "family": "ISC",
+      "mode": "aby",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "INC+SBC",
+      "cycles_got": 7,
+      "cycles_ok": true,
+      "detail": "A=1F cyc=7"
+    },
+    {
+      "op": 227,
+      "family": "ISC",
+      "mode": "izx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "INC+SBC",
+      "cycles_got": 8,
+      "cycles_ok": true,
+      "detail": "A=1F cyc=8"
+    },
+    {
+      "op": 243,
+      "family": "ISC",
+      "mode": "izy",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "INC+SBC",
+      "cycles_got": 8,
+      "cycles_ok": true,
+      "detail": "A=1F cyc=8"
+    },
+    {
+      "op": 7,
+      "family": "SLO",
+      "mode": "zp",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ASL+ORA",
+      "cycles_got": 5,
+      "cycles_ok": true,
+      "detail": "M=00 A=01 P=21 cyc=5"
+    },
+    {
+      "op": 15,
+      "family": "SLO",
+      "mode": "abs",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ASL+ORA",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "M=82 A=82 cyc=6"
+    },
+    {
+      "op": 23,
+      "family": "SLO",
+      "mode": "zpx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ASL+ORA",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "M=02 A=02 cyc=6"
+    },
+    {
+      "op": 31,
+      "family": "SLO",
+      "mode": "abx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ASL+ORA",
+      "cycles_got": 7,
+      "cycles_ok": true,
+      "detail": "M=02 A=02 cyc=7"
+    },
+    {
+      "op": 27,
+      "family": "SLO",
+      "mode": "aby",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ASL+ORA",
+      "cycles_got": 7,
+      "cycles_ok": true,
+      "detail": "M=02 A=02 cyc=7"
+    },
+    {
+      "op": 3,
+      "family": "SLO",
+      "mode": "izx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ASL+ORA",
+      "cycles_got": 8,
+      "cycles_ok": true,
+      "detail": "M=02 A=02 cyc=8"
+    },
+    {
+      "op": 19,
+      "family": "SLO",
+      "mode": "izy",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ASL+ORA",
+      "cycles_got": 8,
+      "cycles_ok": true,
+      "detail": "M=02 A=02 cyc=8"
+    },
+    {
+      "op": 39,
+      "family": "RLA",
+      "mode": "zp",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROL+AND",
+      "cycles_got": 5,
+      "cycles_ok": true,
+      "detail": "M=00 A=00 P=23"
+    },
+    {
+      "op": 47,
+      "family": "RLA",
+      "mode": "abs",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROL+AND",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "M=03 A=03"
+    },
+    {
+      "op": 55,
+      "family": "RLA",
+      "mode": "zpx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROL+AND",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "M=80 A=80 cyc=6"
+    },
+    {
+      "op": 63,
+      "family": "RLA",
+      "mode": "abx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROL+AND",
+      "cycles_got": 7,
+      "cycles_ok": true,
+      "detail": "M=80 A=80 cyc=7"
+    },
+    {
+      "op": 59,
+      "family": "RLA",
+      "mode": "aby",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROL+AND",
+      "cycles_got": 7,
+      "cycles_ok": true,
+      "detail": "M=80 A=80 cyc=7"
+    },
+    {
+      "op": 35,
+      "family": "RLA",
+      "mode": "izx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROL+AND",
+      "cycles_got": 8,
+      "cycles_ok": true,
+      "detail": "M=80 A=80 cyc=8"
+    },
+    {
+      "op": 51,
+      "family": "RLA",
+      "mode": "izy",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROL+AND",
+      "cycles_got": 8,
+      "cycles_ok": true,
+      "detail": "M=80 A=80 cyc=8"
+    },
+    {
+      "op": 71,
+      "family": "SRE",
+      "mode": "zp",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "LSR+EOR",
+      "cycles_got": 5,
+      "cycles_ok": true,
+      "detail": "M=01 A=00 P=23"
+    },
+    {
+      "op": 79,
+      "family": "SRE",
+      "mode": "abs",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "LSR+EOR",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "M=7F A=7F"
+    },
+    {
+      "op": 87,
+      "family": "SRE",
+      "mode": "zpx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "LSR+EOR",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "M=01 A=00 cyc=6"
+    },
+    {
+      "op": 95,
+      "family": "SRE",
+      "mode": "abx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "LSR+EOR",
+      "cycles_got": 7,
+      "cycles_ok": true,
+      "detail": "M=01 A=00 cyc=7"
+    },
+    {
+      "op": 91,
+      "family": "SRE",
+      "mode": "aby",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "LSR+EOR",
+      "cycles_got": 7,
+      "cycles_ok": true,
+      "detail": "M=01 A=00 cyc=7"
+    },
+    {
+      "op": 67,
+      "family": "SRE",
+      "mode": "izx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "LSR+EOR",
+      "cycles_got": 8,
+      "cycles_ok": true,
+      "detail": "M=01 A=00 cyc=8"
+    },
+    {
+      "op": 83,
+      "family": "SRE",
+      "mode": "izy",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "LSR+EOR",
+      "cycles_got": 8,
+      "cycles_ok": true,
+      "detail": "M=01 A=00 cyc=8"
+    },
+    {
+      "op": 103,
+      "family": "RRA",
+      "mode": "zp",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROR+ADC",
+      "cycles_got": 5,
+      "cycles_ok": true,
+      "detail": "M=00 A=01 P=20 cyc=5"
+    },
+    {
+      "op": 111,
+      "family": "RRA",
+      "mode": "abs",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROR+ADC",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "M=80 A=90 cyc=6"
+    },
+    {
+      "op": 119,
+      "family": "RRA",
+      "mode": "zpx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROR+ADC",
+      "cycles_got": 6,
+      "cycles_ok": true,
+      "detail": "M=80 A=81 cyc=6"
+    },
+    {
+      "op": 127,
+      "family": "RRA",
+      "mode": "abx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROR+ADC",
+      "cycles_got": 7,
+      "cycles_ok": true,
+      "detail": "M=80 A=81 cyc=7"
+    },
+    {
+      "op": 123,
+      "family": "RRA",
+      "mode": "aby",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROR+ADC",
+      "cycles_got": 7,
+      "cycles_ok": true,
+      "detail": "M=80 A=81 cyc=7"
+    },
+    {
+      "op": 99,
+      "family": "RRA",
+      "mode": "izx",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROR+ADC",
+      "cycles_got": 8,
+      "cycles_ok": true,
+      "detail": "M=80 A=81 cyc=8"
+    },
+    {
+      "op": 115,
+      "family": "RRA",
+      "mode": "izy",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "ROR+ADC",
+      "cycles_got": 8,
+      "cycles_ok": true,
+      "detail": "M=80 A=81 cyc=8"
+    },
+    {
+      "op": 11,
+      "family": "ANC",
+      "mode": "imm",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "AND; C←N",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "A=80 P=A1"
+    },
+    {
+      "op": 43,
+      "family": "ANC",
+      "mode": "imm",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "AND; C←N",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "A=7F P=20"
+    },
+    {
+      "op": 75,
+      "family": "ALR",
+      "mode": "imm",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "AND+LSR",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "A=7F P=20"
+    },
+    {
+      "op": 107,
+      "family": "ARR",
+      "mode": "imm",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "AND+ROR; C=b6 V=b6⊕b5 (D=0)",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "A=60 P=21"
+    },
+    {
+      "op": 203,
+      "family": "AXS",
+      "mode": "imm",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "X:=(A\u0026X)-#",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "X=0E P=21"
+    },
+    {
+      "op": 235,
+      "family": "USBC",
+      "mode": "imm",
+      "status": "MATCH",
+      "twin_note": "implemented composite",
+      "expect": "SBC #imm alias",
+      "cycles_got": 2,
+      "cycles_ok": true,
+      "detail": "A=04 P=21"
+    },
+    {
+      "op": 139,
+      "family": "XAA",
+      "mode": "imm",
+      "status": "UNCLAIMED",
+      "twin_note": "residual — no deterministic silicon model claimed",
+      "expect": "highly unstable (Graham highly-unstable); magic constant; no deterministic claim",
+      "cycles_got": 0,
+      "cycles_ok": false
+    },
+    {
+      "op": 171,
+      "family": "LAX",
+      "mode": "imm",
+      "status": "UNCLAIMED",
+      "twin_note": "residual — no deterministic silicon model claimed",
+      "expect": "highly unstable (Graham highly-unstable); magic constant; no deterministic claim",
+      "cycles_got": 0,
+      "cycles_ok": false
+    },
+    {
+      "op": 147,
+      "family": "AHX",
+      "mode": "izy",
+      "status": "UNCLAIMED",
+      "twin_note": "residual — no deterministic silicon model claimed",
+      "expect": "unstable (Graham unstable); H+1 bus race; residual",
+      "cycles_got": 0,
+      "cycles_ok": false
+    },
+    {
+      "op": 159,
+      "family": "AHX",
+      "mode": "aby",
+      "status": "UNCLAIMED",
+      "twin_note": "residual — no deterministic silicon model claimed",
+      "expect": "unstable (Graham unstable); H+1 bus race; residual",
+      "cycles_got": 0,
+      "cycles_ok": false
+    },
+    {
+      "op": 156,
+      "family": "SHY",
+      "mode": "abx",
+      "status": "UNCLAIMED",
+      "twin_note": "residual — no deterministic silicon model claimed",
+      "expect": "unstable (Graham unstable); H+1 bus race; residual",
+      "cycles_got": 0,
+      "cycles_ok": false
+    },
+    {
+      "op": 158,
+      "family": "SHX",
+      "mode": "aby",
+      "status": "UNCLAIMED",
+      "twin_note": "residual — no deterministic silicon model claimed",
+      "expect": "unstable (Graham unstable); H+1 bus race; residual",
+      "cycles_got": 0,
+      "cycles_ok": false
+    },
+    {
+      "op": 155,
+      "family": "TAS",
+      "mode": "aby",
+      "status": "UNCLAIMED",
+      "twin_note": "residual — no deterministic silicon model claimed",
+      "expect": "unstable (Graham unstable); S + H+1 race; residual",
+      "cycles_got": 0,
+      "cycles_ok": false
+    },
+    {
+      "op": 187,
+      "family": "LAS",
+      "mode": "aby",
+      "status": "UNCLAIMED",
+      "twin_note": "residual — no deterministic silicon model claimed",
+      "expect": "Graham: 'probably unreliable'; residual UNCLAIMED",
+      "cycles_got": 0,
+      "cycles_ok": false
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+SOURCE-undoc — undocumented / illegal NMOS 6502 behavior cites
+Soft≠Physical. Observation cites only. No MOS manual paste. No Visual6502 geometry vendor.
+
+Primary published silicon-behavior tables (emulator authors / community observation):
+1. Graham (oxyron) — "6502/6510/8500/8502 Opcode matrix"
+   https://www.oxyron.de/html/opcodes02.html
+   Role: mnemonic×mode×cycle matrix; marks unstable (�) and highly-unstable (��);
+   composite definitions SLO=ASL+ORA, RLA=ROL+AND, SRE=LSR+EOR, RRA=ROR+ADC,
+   SAX=A&X store, LAX=LDA+LDX, DCP=DEC+CMP, ISC=INC+SBC;
+   ANC/ALR/ARR/AXS notes; XAA/LAX# highly unstable; AHX/SHY/SHX/TAS unstable;
+   LAS "probably unreliable".
+
+2. Norbert Landsteiner / masswerk — "6502 Illegal Opcodes Demystified" (2021-06-05)
+   https://masswerk.at/nowgobang/2021/6502-illegal-opcodes
+   Role: decode-matrix explanation of c=3 composites; NOP/JAM taxonomy;
+   H+1 group (SHA/SHX/SHY/TAS) instability; magic-constant ANE/LXA.
+
+3. Freddy Offenga — "6502 Undocumented Opcodes" (classic list, nesdev mirror)
+   https://www.nesdev.org/undocumented_opcodes.txt
+   Role: historical mnemonic aliases (ASO/LSE/DCM/INS/…); addressing corrections.
+
+4. Adam Vardy — "Extra Instructions Of The 65XX Series CPU" (1996)
+   https://www.nesdev.org/extra_instructions.txt
+   Role: early complete 105-slot inventory (cross-check).
+
+5. Visual6502 / NESdev Visual6502wiki — observation cite ONLY
+   https://www.nesdev.org/wiki/Visual6502wiki/6502_Unsupported_Opcodes
+   https://www.pagetable.com/?p=39 (Steil: how illegals arise from PLA overlap)
+   Role: confirms composite behavior arises from overlapping decode; NOT seeded;
+   geometry / transistor netlist NOT vendored into this repo.
+
+What this twin claims (soft):
+- Stable composites above, plus undocumented NOPs, JAM/KIL, USBC $EB, AXS $CB,
+  ANC $0B/$2B, ALR $4B, ARR $6B with D=0 (binary) flag rule C←bit6, V←bit6⊕bit5.
+- Soft agreement with published tables ≠ silicon proof.
+
+What stays UNCLAIMED residual:
+- $8B XAA/ANE, $AB LAX immediate (magic constant / highly unstable)
+- $93/$9F AHX, $9C SHY, $9E SHX, $9B TAS (H+1 bus race / unstable)
+- $BB LAS (Graham: probably unreliable)
+- ARR decimal-mode (D=1) corner
+- Soft≠Physical — no Digilent flash; no Φ1/Φ2 claim

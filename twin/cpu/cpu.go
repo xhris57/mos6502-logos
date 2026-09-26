@@ -259,6 +259,75 @@ func New(bus Bus) *CPU {
 	return &CPU{S: 0xFD, P: FlagU | FlagI, Bus: bus}
 }
 
+
+// --- undocumented / illegal NMOS helpers (stable composites) ---
+// Soft≠Physical. Sources: Graham oxyron matrix; masswerk illegal demystified;
+// Visual6502 observation-cite only (not geometry). See artifacts/SOURCE-undoc.txt.
+
+func (c *CPU) rmwSLO(a uint16) {
+	t := c.asl(c.rd(a))
+	c.wr(a, t)
+	c.A |= t
+	c.setZN(c.A)
+}
+func (c *CPU) rmwRLA(a uint16) {
+	t := c.rol(c.rd(a))
+	c.wr(a, t)
+	c.A &= t
+	c.setZN(c.A)
+}
+func (c *CPU) rmwSRE(a uint16) {
+	t := c.lsr(c.rd(a))
+	c.wr(a, t)
+	c.A ^= t
+	c.setZN(c.A)
+}
+func (c *CPU) rmwRRA(a uint16) {
+	t := c.ror(c.rd(a))
+	c.wr(a, t)
+	c.adc(t)
+}
+func (c *CPU) rmwDCP(a uint16) {
+	t := c.rd(a) - 1
+	c.wr(a, t)
+	c.cmp(c.A, t)
+}
+func (c *CPU) rmwISC(a uint16) {
+	t := c.rd(a) + 1
+	c.wr(a, t)
+	c.sbc(t)
+}
+func (c *CPU) lax(v uint8) {
+	c.A, c.X = v, v
+	c.setZN(v)
+}
+func (c *CPU) sax(a uint16) { c.wr(a, c.A&c.X) }
+
+func (c *CPU) anc(v uint8) {
+	c.A &= v
+	c.setZN(c.A)
+	c.setC(c.A&0x80 != 0) // C ← N (ASL/ROL side-effect)
+}
+func (c *CPU) alr(v uint8) {
+	c.A &= v
+	c.A = c.lsr(c.A)
+}
+func (c *CPU) arr(v uint8) {
+	// Binary-mode ARR (D=0): AND then ROR; C←bit6, V←bit6⊕bit5.
+	// Decimal ARR residual (not claimed). Soft≠Physical.
+	c.A &= v
+	c.A = c.ror(c.A)
+	c.setC(c.A&0x40 != 0)
+	c.setV(((c.A>>6)^(c.A>>5))&1 != 0)
+}
+func (c *CPU) axs(v uint8) {
+	// AXS/SBX: X := (A&X) - imm; flags like CMP (not SBC — C ignores prior C).
+	t := uint16(c.A&c.X) - uint16(v)
+	c.X = uint8(t)
+	c.setC(t < 0x100)
+	c.setZN(c.X)
+}
+
 func (c *CPU) Step() uint {
 	if c.Jammed {
 		return 0
@@ -855,6 +924,144 @@ func (c *CPU) Step() uint {
 		c.X = c.S
 		c.setZN(c.X)
 		cyc = 2
+	// ========== undocumented / illegal NMOS (stable composites) ==========
+	// Twin previously NOP/JAM or default-stubbed many of these. Soft≠Physical.
+
+	// --- SLO / ASO = ASL + ORA ---
+	case 0x07: // SLO zp
+		c.rmwSLO(c.addrZP()); cyc = 5
+	case 0x17: // SLO zp,X
+		c.rmwSLO(c.addrZPX()); cyc = 6
+	case 0x0F: // SLO abs
+		c.rmwSLO(c.addrAbs()); cyc = 6
+	case 0x1F: // SLO abs,X
+		a, _ := c.addrAbsX(); c.rmwSLO(a); cyc = 7
+	case 0x1B: // SLO abs,Y
+		a, _ := c.addrAbsY(); c.rmwSLO(a); cyc = 7
+	case 0x03: // SLO (zp,X)
+		c.rmwSLO(c.addrIndX()); cyc = 8
+	case 0x13: // SLO (zp),Y
+		a, _ := c.addrIndY(); c.rmwSLO(a); cyc = 8
+
+	// --- RLA = ROL + AND ---
+	case 0x27:
+		c.rmwRLA(c.addrZP()); cyc = 5
+	case 0x37:
+		c.rmwRLA(c.addrZPX()); cyc = 6
+	case 0x2F:
+		c.rmwRLA(c.addrAbs()); cyc = 6
+	case 0x3F:
+		a, _ := c.addrAbsX(); c.rmwRLA(a); cyc = 7
+	case 0x3B:
+		a, _ := c.addrAbsY(); c.rmwRLA(a); cyc = 7
+	case 0x23:
+		c.rmwRLA(c.addrIndX()); cyc = 8
+	case 0x33:
+		a, _ := c.addrIndY(); c.rmwRLA(a); cyc = 8
+
+	// --- SRE / LSE = LSR + EOR ---
+	case 0x47:
+		c.rmwSRE(c.addrZP()); cyc = 5
+	case 0x57:
+		c.rmwSRE(c.addrZPX()); cyc = 6
+	case 0x4F:
+		c.rmwSRE(c.addrAbs()); cyc = 6
+	case 0x5F:
+		a, _ := c.addrAbsX(); c.rmwSRE(a); cyc = 7
+	case 0x5B:
+		a, _ := c.addrAbsY(); c.rmwSRE(a); cyc = 7
+	case 0x43:
+		c.rmwSRE(c.addrIndX()); cyc = 8
+	case 0x53:
+		a, _ := c.addrIndY(); c.rmwSRE(a); cyc = 8
+
+	// --- RRA = ROR + ADC ---
+	case 0x67:
+		c.rmwRRA(c.addrZP()); cyc = 5
+	case 0x77:
+		c.rmwRRA(c.addrZPX()); cyc = 6
+	case 0x6F:
+		c.rmwRRA(c.addrAbs()); cyc = 6
+	case 0x7F:
+		a, _ := c.addrAbsX(); c.rmwRRA(a); cyc = 7
+	case 0x7B:
+		a, _ := c.addrAbsY(); c.rmwRRA(a); cyc = 7
+	case 0x63:
+		c.rmwRRA(c.addrIndX()); cyc = 8
+	case 0x73:
+		a, _ := c.addrIndY(); c.rmwRRA(a); cyc = 8
+
+	// --- SAX / AXS / AAX = store A&X ---
+	case 0x87: // SAX zp
+		c.sax(c.addrZP()); cyc = 3
+	case 0x97: // SAX zp,Y
+		c.sax(c.addrZPY()); cyc = 4
+	case 0x8F: // SAX abs
+		c.sax(c.addrAbs()); cyc = 4
+	case 0x83: // SAX (zp,X)
+		c.sax(c.addrIndX()); cyc = 6
+
+	// --- LAX = LDA + LDX (non-immediate; imm $AB is unstable) ---
+	case 0xA7: // LAX zp
+		c.lax(c.rd(c.addrZP())); cyc = 3
+	case 0xB7: // LAX zp,Y
+		c.lax(c.rd(c.addrZPY())); cyc = 4
+	case 0xAF: // LAX abs
+		c.lax(c.rd(c.addrAbs())); cyc = 4
+	case 0xBF: // LAX abs,Y
+		a, x := c.addrAbsY(); c.lax(c.rd(a)); cyc = 4 + uint(x)
+	case 0xA3: // LAX (zp,X)
+		c.lax(c.rd(c.addrIndX())); cyc = 6
+	case 0xB3: // LAX (zp),Y
+		a, x := c.addrIndY(); c.lax(c.rd(a)); cyc = 5 + uint(x)
+
+	// --- DCP / DCM = DEC + CMP ---
+	case 0xC7:
+		c.rmwDCP(c.addrZP()); cyc = 5
+	case 0xD7:
+		c.rmwDCP(c.addrZPX()); cyc = 6
+	case 0xCF:
+		c.rmwDCP(c.addrAbs()); cyc = 6
+	case 0xDF:
+		a, _ := c.addrAbsX(); c.rmwDCP(a); cyc = 7
+	case 0xDB:
+		a, _ := c.addrAbsY(); c.rmwDCP(a); cyc = 7
+	case 0xC3:
+		c.rmwDCP(c.addrIndX()); cyc = 8
+	case 0xD3:
+		a, _ := c.addrIndY(); c.rmwDCP(a); cyc = 8
+
+	// --- ISC / ISB / INS = INC + SBC ---
+	case 0xE7:
+		c.rmwISC(c.addrZP()); cyc = 5
+	case 0xF7:
+		c.rmwISC(c.addrZPX()); cyc = 6
+	case 0xEF:
+		c.rmwISC(c.addrAbs()); cyc = 6
+	case 0xFF:
+		a, _ := c.addrAbsX(); c.rmwISC(a); cyc = 7
+	case 0xFB:
+		a, _ := c.addrAbsY(); c.rmwISC(a); cyc = 7
+	case 0xE3:
+		c.rmwISC(c.addrIndX()); cyc = 8
+	case 0xF3:
+		a, _ := c.addrIndY(); c.rmwISC(a); cyc = 8
+
+	// --- immediate composites (stable) ---
+	case 0x0B, 0x2B: // ANC #imm
+		c.anc(c.fetch()); cyc = 2
+	case 0x4B: // ALR #imm
+		c.alr(c.fetch()); cyc = 2
+	case 0x6B: // ARR #imm (binary D=0 claimed)
+		c.arr(c.fetch()); cyc = 2
+	case 0xCB: // AXS/SBX #imm — deterministic; Graham ≠ highly-unstable
+		c.axs(c.fetch()); cyc = 2
+	// $EB USBC already aliased with SBC #imm above.
+
+	// UNCLAIMED unstable (no silicon-deterministic model claimed here):
+	// $8B XAA/ANE, $AB LAX#, $93/$9F AHX, $9C SHY, $9E SHX, $9B TAS, $BB LAS
+	// fall through to default stub (operand not invented). Soft≠Physical.
+
 	case 0xEA: // NOP
 		cyc = 2
 	case 0x1A, 0x3A, 0x5A, 0x7A, 0xDA, 0xFA: // NOP  (undocumented)
@@ -875,6 +1082,7 @@ func (c *CPU) Step() uint {
 		_, x := c.addrAbsX()
 		cyc = 4 + uint(x)
 	default:
+		// residual stub: unstable or unclaimed illegal; Soft≠Physical
 		cyc = 2
 	}
 	c.Cycles += uint64(cyc)

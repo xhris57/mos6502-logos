@@ -11,7 +11,7 @@
   "success_pc": "3469",
   "start_pc": "0400",
   "cycle_cap": 200000000,
-  "wall_ms": 239,
+  "wall_ms": 244,
   "rom": {
     "bytes": 65536,
     "commit": "7954e2dbb49c469ea286070bf46cdd71aeb29e4b",
@@ -21,10 +21,10 @@
     "url": "https://raw.githubusercontent.com/Klaus2m5/6502_65C02_functional_tests/7954e2dbb49c469ea286070bf46cdd71aeb29e4b/bin_files/6502_functional_test.bin"
   },
   "notes": [
-    "Soft≠Physical — Digilent mutex Operator; NO flash",
-    "Source: Klaus2m5/6502_65C02_functional_tests @ 7954e2db (bin SHA256 fa12bfc7…)",
+    "Soft\u2260Physical \u2014 Digilent mutex Operator; NO flash",
+    "Source: Klaus2m5/6502_65C02_functional_tests @ 7954e2db (bin SHA256 fa12bfc7\u2026)",
     "Start PC=$0400; success trap=$3469; test_case@$0200",
-    "65C02 extended suite NOT run; undocumented opcodes residual",
+    "Undocumented: stable illegals soft-matched in witness-undoc; unstable UNCLAIMED; Klaus suite does not exercise illegals",
     "RDY/SO / mid-instruction IRQ residual"
   ],
   "soft_only": true
