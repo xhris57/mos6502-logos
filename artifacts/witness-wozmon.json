@@ -1,0 +1,81 @@
+{
+  "suite": "wozmon_soft_apple1",
+  "result": "PASS",
+  "err": 0,
+  "pass": 9,
+  "cycles": 7201,
+  "pc_end": "FF29",
+  "console": "\\\n0000.0007\n\n0000: A0 A1 A2 A3 A4 A5 A6 A7\n0010: DE AD\n\n0010: 00\n0010.0011\n\n0010: DE AD\n",
+  "commands_soft": [
+    "0000.0007\r",
+    "0010: DE AD\r",
+    "0010.0011\r"
+  ],
+  "checks": [
+    {
+      "detail": "got e5af0d1c4057bd8e0ef5cb069c208ff7cc0984a7dff53b12c5cf119de8cb5c25 path=/workspace/mos6502-logos/platforms/apple1/wozmon.bin",
+      "name": "rom_sha256",
+      "ok": true
+    },
+    {
+      "detail": "FFFC=00FF want 00FF",
+      "name": "rom_reset_vector",
+      "ok": true
+    },
+    {
+      "detail": "PC=FF00",
+      "name": "reset_pc",
+      "ok": true
+    },
+    {
+      "detail": "console=\"\\\\\\n\"",
+      "name": "boot_backslash",
+      "ok": true
+    },
+    {
+      "detail": "console=\"\\\\\\n0000.0007\\n\\n0000: A0 A1 A2 A3 A4 A5 A6 A7\\n0010: DE AD\\n\\n0010: 00\\n0010.0011\\n\\n0010: DE AD\\n\"",
+      "name": "examine_addr_print",
+      "ok": true
+    },
+    {
+      "detail": "console=\"\\\\\\n0000.0007\\n\\n0000: A0 A1 A2 A3 A4 A5 A6 A7\\n0010: DE AD\\n\\n0010: 00\\n0010.0011\\n\\n0010: DE AD\\n\"",
+      "name": "examine_data_a0",
+      "ok": true
+    },
+    {
+      "detail": "mem10=DE mem11=AD",
+      "name": "deposit_took",
+      "ok": true
+    },
+    {
+      "detail": "console=\"\\\\\\n0000.0007\\n\\n0000: A0 A1 A2 A3 A4 A5 A6 A7\\n0010: DE AD\\n\\n0010: 00\\n0010.0011\\n\\n0010: DE AD\\n\"",
+      "name": "deposit_examine",
+      "ok": true
+    },
+    {
+      "detail": "cycles=7201 cap=5000000",
+      "name": "under_cycle_cap",
+      "ok": true
+    }
+  ],
+  "rom": {
+    "org": "FF00",
+    "path": "/workspace/mos6502-logos/platforms/apple1/wozmon.bin",
+    "sha256": "e5af0d1c4057bd8e0ef5cb069c208ff7cc0984a7dff53b12c5cf119de8cb5c25",
+    "size": 256
+  },
+  "notes": [
+    "Soft≠Physical — Soft twin + Soft PIA stubs only",
+    "No Digilent flash; no silicon claim",
+    "No real PIA timing / NTSC / physical Apple-1",
+    "Soft-scripted KBD queue; DSP always-ready Soft stub"
+  ],
+  "soft_only": true,
+  "residual": [
+    "Soft≠Physical",
+    "PIA handshake latency Soft-assumed (always-ready DSP)",
+    "Keyboard Soft byte queue ≠ scanned matrix",
+    "Instruction-cycle twin only; not Φ1/Φ2 half-cycle",
+    "Not silicon / FPGA bitstream / physical replica proven"
+  ]
+}

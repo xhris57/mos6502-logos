@@ -1,0 +1,4 @@
+suite=wozmon_soft_apple1 result=PASS err=0 pass=9 cycles=7201 pc_end=FF29 soft_only=1
+console="\\\n0000.0007\n\n0000: A0 A1 A2 A3 A4 A5 A6 A7\n0010: DE AD\n\n0010: 00\n0010.0011\n\n0010: DE AD\n"
+commands=["0000.0007\r" "0010: DE AD\r" "0010.0011\r"]
+rom_sha256=e5af0d1c4057bd8e0ef5cb069c208ff7cc0984a7dff53b12c5cf119de8cb5c25

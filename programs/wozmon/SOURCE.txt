@@ -1,0 +1,55 @@
+Apple-1 WOZ Monitor (WOZMON) — Soft provenance
+==============================================
+
+Soft≠Physical. This tree hosts a Soft reconstruction of the classic ~256-byte
+Apple-1 Hex Monitor at $FF00 for the mos6502-logos cycle twin. No Digilent
+flash. No silicon claim. No real PIA timing / NTSC / physical Apple-1.
+
+What
+----
+  Image:     wozmon.bin  (256 bytes, load at $FF00)
+  Listing:   ../programs/wozmon/wozmon.asm  (asm.py-adapted; ZP as $nn)
+  Hex text:  wozmon.hex
+
+SHA
+---
+  SHA256: e5af0d1c4057bd8e0ef5cb069c208ff7cc0984a7dff53b12c5cf119de8cb5c25
+  SHA1:   224767aa499dc98767e042f375ced1359be8a35f
+  Size:   256
+
+Public listings used (cross-checked; identical 256-byte image)
+--------------------------------------------------------------
+  1. https://github.com/jefftranter/6502/blob/master/asm/wozmon/wozmon.s
+     README: "source code for the original Woz Monitor for the Apple 1"
+     (CC65-oriented reconstruction; no SPDX in tree)
+
+  2. http://neil.franklin.ch/Info_Texts/Apple_1_Wozmon.hex
+     Hex dump derived from Apple-1 Operation Manual pages 7–9 listing
+
+  3. https://raw.githubusercontent.com/alangarf/apple-one/master/roms/wozmon.hex
+     FPGA Soft Apple-1 ROM (byte-identical to (2))
+
+  4. Annotated walkthrough (reference only, not ingested as blob):
+     https://www.sbprojects.net/projects/apple1/wozmon.php
+
+License / copyright note
+------------------------
+  Original monitor: Steve Wozniak / Apple Computer, 1976 (historical firmware).
+  FOSS license of the original ROM bytes is unclear / Apple-historical.
+  Replica projects report Wozniak permission for firmware use in replica
+  contexts; this Soft tree ships the widely published public hex dump for
+  Soft simulation + an asm.py-clean reconstruction that byte-matches it.
+  Do NOT paste large copyrighted manuals here. Soft≠Physical — educational
+  Soft twin only.
+
+Memory map (Soft Apple-1-ish)
+-----------------------------
+  $0000–$0FFF / $0000–$1FFF  Soft RAM (4K/8K)
+  $0200–$027F                Wozmon input buffer (IN)
+  $D010 KBD                  Soft PIA.A keyboard data (bit7 set on char)
+  $D011 KBDCR                Soft PIA.A keyboard control (bit7 = key ready)
+  $D012 DSP                  Soft PIA.B display (bit7 = busy; Soft always ready)
+  $D013 DSPCR                Soft PIA.B control (accepted, not timed)
+  $FF00–$FFFF                WOZMON ROM image
+
+Reset vector in image: $FFFC/$FFFD → $FF00

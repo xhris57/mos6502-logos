@@ -40,14 +40,17 @@ Tables: `artifacts/LAW.md` (opcode×mode×cycle register/bus/flag transitions fo
 | Hand program sum/JSR/BRK vector | same |
 | **Klaus Dormann NMOS functional (all official opcode×mode sections $00–$2B → $F0)** | `tb/witness_klaus_test.go` → `artifacts/witness-klaus.*` — soft PASS, err=0, cycles=96241388, PC=$3469 |
 | **Undoc/illegal NMOS matrix (stable composites)** | `tb/witness_undoc_test.go` → `artifacts/witness-undoc.*` — matched=97 differed=0 unclaimed=8; Soft≠Physical |
+| **Soft Apple-1 WOZMON platform (examine/deposit Soft-scripted)** | `tb/witness_wozmon_test.go` → `artifacts/witness-wozmon.*` — Soft≠Physical; no real PIA/NTSC |
 
 ```bash
 make witness         # FIRST WITNESS → artifacts/witness-first.{json,txt}
 make witness-klaus   # Klaus Dormann → artifacts/witness-klaus.{json,txt}
 make witness-undoc   # illegal/undoc matrix → artifacts/witness-undoc.{json,txt}
+make witness-wozmon  # Soft Apple-1 WOZMON → artifacts/witness-wozmon.{json,txt}
 ```
 
 ROM provenance: `testdata/SOURCE.txt` (Klaus2m5 @ `7954e2db…`, SHA256 `fa12bfc7…`).
+WOZMON provenance: `platforms/apple1/SOURCE.txt` (SHA256 `e5af0d1c…`). Soft≠Physical.
 
 ## RESIDUAL (named honestly)
 
@@ -58,16 +61,18 @@ ROM provenance: `testdata/SOURCE.txt` (Klaus2m5 @ `7954e2db…`, SHA256 `fa12bfc
 5. **65C02 extras** — extended-opcode suite not run; not claimed.
 6. **Opcode×mode×cycle φ timing** — Klaus witnesses **functional** result/flags/modes for the official NMOS set; per-cycle bus geometry / half-cycle still **assumed**.
 7. **BCD N/Z/V** — NMOS teaching rule; Klaus decimal focuses valid-BCD carry; corner vs every die residual.
+8. **Soft Apple-1 / WOZMON** — Soft PIA stubs + Soft TTY only; no real 6820 timing, no NTSC, no physical Apple-1.
 
 ## Proven vs assumed
 
 **Proven in this repo (soft):**
 - FIRST WITNESS — `artifacts/witness-first.txt` (`result=PASS err=0`).
 - Klaus Dormann NMOS functional — `artifacts/witness-klaus.txt` (`result=PASS err=0 cycles=96241388 pc_end=3469 max_test_case=2B`). Soft≠Physical.
+- Soft Apple-1 WOZMON platform — `artifacts/witness-wozmon.txt` (`result=PASS err=0 cycles=7201`, Soft-scripted `\\` + examine/deposit). Soft≠Physical.
 
 **Newly witnessed (soft, via Klaus):** official NMOS opcode×mode×flag matrices exercised by sections through `$2B` (loads/stores/ALU/shifts/RMW/branches/stack/JMP/JSR/BRK/decimal ADC·SBC, etc.).
 
-**Still residual / assumed:** 65C02 extras; unstable illegals UNCLAIMED; RDY/SO; Φ1/Φ2 half-cycle bus; silicon / FPGA bitstream; Visual6502 geometry; BCD N/V/Z die corners; ARR D=1.
+**Still residual / assumed:** 65C02 extras; unstable illegals UNCLAIMED; RDY/SO; Φ1/Φ2 half-cycle bus; silicon / FPGA bitstream; Visual6502 geometry; BCD N/V/Z die corners; ARR D=1; real 6820 PIA timing / NTSC / physical Apple-1.
 
 ## Layout
 
@@ -81,6 +86,9 @@ ROM provenance: `testdata/SOURCE.txt` (Klaus2m5 @ `7954e2db…`, SHA256 `fa12bfc
 - `tb/` — FIRST WITNESS
 - `tools/asm.py` — harvested assembler
 - `programs/first_witness.asm` — hand program source
+- `platforms/apple1/` — Soft Apple-1-ish bus + WOZMON ROM (`SOURCE.txt`, Soft≠Physical)
+- `programs/wozmon/` — asm.py-adapted WOZMON source + matching `wozmon.bin`
+- `artifacts/witness-wozmon.{json,txt}` — Soft WOZMON platform receipt
 
 ## Harvest / cites
 
@@ -102,4 +110,6 @@ make witness-klaus
 cat artifacts/witness-klaus.txt
 make witness-undoc
 cat artifacts/witness-undoc.txt
+make witness-wozmon
+cat artifacts/witness-wozmon.txt
 ```

@@ -1,4 +1,4 @@
-.PHONY: witness witness-klaus witness-undoc twin-test asm
+.PHONY: witness witness-klaus witness-undoc witness-wozmon twin-test asm
 
 # FIRST WITNESS — Soft≠Physical. Writes artifacts/witness-first.{json,txt}
 witness:
@@ -19,3 +19,8 @@ asm:
 # Digilent mutex Operator — NO flash. Unstable opcodes stay UNCLAIMED.
 witness-undoc:
 	go test ./tb/ -run TestUndocMatrix -count=1 -v
+
+# Soft Apple-1 WOZMON platform — Soft≠Physical. Writes artifacts/witness-wozmon.{json,txt}
+# Digilent mutex Operator — NO flash. No real PIA / NTSC / physical Apple-1.
+witness-wozmon:
+	go test ./tb/ -run TestWozmonSoftPlatform -count=1 -v
