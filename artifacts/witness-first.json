@@ -1,0 +1,154 @@
+{
+  "suite": "first_witness",
+  "result": "PASS",
+  "err": 0,
+  "pass": 28,
+  "cycle_total": 220,
+  "checks": [
+    {
+      "detail": "PC=8000 want 8000",
+      "name": "reset_vector_pc",
+      "ok": true
+    },
+    {
+      "detail": "cycles=7 want 7",
+      "name": "reset_vector_cycles",
+      "ok": true
+    },
+    {
+      "detail": "P=24",
+      "name": "reset_I_set",
+      "ok": true
+    },
+    {
+      "detail": "A=42 P=24",
+      "name": "lda_imm",
+      "ok": true
+    },
+    {
+      "detail": "mem10=42",
+      "name": "sta_zp",
+      "ok": true
+    },
+    {
+      "detail": "A=00 P=26",
+      "name": "lda_zero_flag",
+      "ok": true
+    },
+    {
+      "detail": "A=42",
+      "name": "lda_zp",
+      "ok": true
+    },
+    {
+      "detail": "A=80 P=E4",
+      "name": "adc_overflow",
+      "ok": true
+    },
+    {
+      "detail": "A=04 P=25",
+      "name": "sbc_with_c",
+      "ok": true
+    },
+    {
+      "detail": "A=03 P=25",
+      "name": "sbc_borrow",
+      "ok": true
+    },
+    {
+      "detail": "A=10",
+      "name": "adc_bcd_9plus1",
+      "ok": true
+    },
+    {
+      "detail": "PC=8105",
+      "name": "beq_target",
+      "ok": true
+    },
+    {
+      "detail": "cycles=4 want 4",
+      "name": "beq_page_cycles",
+      "ok": true
+    },
+    {
+      "detail": "PC=8006",
+      "name": "bne_taken_pc",
+      "ok": true
+    },
+    {
+      "detail": "cycles=3 want 3",
+      "name": "bne_taken_cyc",
+      "ok": true
+    },
+    {
+      "detail": "A=01",
+      "name": "bne_skipped_lda",
+      "ok": true
+    },
+    {
+      "detail": "PC=9000",
+      "name": "jsr_pc",
+      "ok": true
+    },
+    {
+      "detail": "cycles=6",
+      "name": "jsr_cycles",
+      "ok": true
+    },
+    {
+      "detail": "A=55",
+      "name": "jsr_sub_lda",
+      "ok": true
+    },
+    {
+      "detail": "PC=8003",
+      "name": "rts_pc",
+      "ok": true
+    },
+    {
+      "detail": "cycles=6",
+      "name": "rts_cycles",
+      "ok": true
+    },
+    {
+      "detail": "A=AA",
+      "name": "after_rts_lda",
+      "ok": true
+    },
+    {
+      "detail": "A=34",
+      "name": "php_pla_BU",
+      "ok": true
+    },
+    {
+      "detail": "A=99",
+      "name": "pha_pla",
+      "ok": true
+    },
+    {
+      "detail": "zp01=30",
+      "name": "hand_sum_zp",
+      "ok": true
+    },
+    {
+      "detail": "zp02=AA",
+      "name": "hand_sub_store",
+      "ok": true
+    },
+    {
+      "detail": "PC=9000",
+      "name": "hand_brk_vector",
+      "ok": true
+    },
+    {
+      "detail": "PC=9000 A=55 X=00 Y=00 S=F7 P=25 cycles=53 flags=--U--I-C\n",
+      "name": "hand_dump_emitted",
+      "ok": true
+    }
+  ],
+  "notes": [
+    "Soft≠Physical — soft twin only; no Digilent flash; no silicon claim",
+    "Cycle totals include reset(7) per scenario; not Φ1/Φ2 half-cycles",
+    "Harvest: pi6502-go 3505eafe… · rpi-6502 58914ac2… · Visual6502 observation-cite only"
+  ]
+}
