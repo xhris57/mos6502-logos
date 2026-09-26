@@ -1,0 +1,21 @@
+Klaus Dormann 6502 functional test (NMOS)
+========================================
+
+Upstream: https://github.com/Klaus2m5/6502_65C02_functional_tests
+Commit:   7954e2dbb49c469ea286070bf46cdd71aeb29e4b
+File:     bin_files/6502_functional_test.bin
+URL:      https://raw.githubusercontent.com/Klaus2m5/6502_65C02_functional_tests/7954e2dbb49c469ea286070bf46cdd71aeb29e4b/bin_files/6502_functional_test.bin
+          (also: …/master/bin_files/6502_functional_test.bin)
+
+SHA256:   fa12bfc761e6f9057e4cc01a665a7b800ff01ae91f598af1e39a1201d01953fd
+SHA1:     55c9ab5b137c8ced3c666bfdb55c8285782baad9
+Size:     65536 bytes (full 64 KiB image $0000–$FFFF)
+
+License:  GPL-3.0 (Klaus Dormann 2012–2015; see upstream)
+
+Run notes (from listing / README):
+  - code_segment = $0400 — set PC to $0400 (do not follow ROM reset vector;
+    $FFFC points at res_trap)
+  - success trap: jmp * at $3469 (bytes 4C 69 34)
+  - failure: any other self jmp * trap; test_case at $0200 holds section #
+  - Soft harness only — Soft≠Physical; no Digilent flash

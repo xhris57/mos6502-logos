@@ -1,0 +1,1 @@
+suite=klaus_dormann_6502_functional result=PASS err=0 pass=1 cycles=96241388 pc_end=3469 test_case=F0 max_test_case=2B section=opcode_testing_complete soft_only=1

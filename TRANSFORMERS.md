@@ -22,8 +22,8 @@ Profile shrinks by deleting knobs that do not change `O`.
 - P: clock / cycle budget; decimal-mode flag `D`; undocumented-opcode policy (official-only vs NOP/JAM stubs); reset vector at `$FFFC`
 - O: register/bus state per cycle (`A X Y S P PC`, mem writes, cycle count)
 - law: see `artifacts/LAW.md`
-- witness: `go test ./tb/` → `artifacts/witness-first.{json,txt}` (FIRST WITNESS hand program)
-- residual: Φ1/Φ2 half-cycle bus timing collapsed; RDY/SO pins absent; full illegal-opcode matrix incomplete; Klaus Dormann suite not run in v1; Soft≠Physical (no Digilent flash / no pin timing)
+- witness: `make witness` → `artifacts/witness-first.*`; `make witness-klaus` → `artifacts/witness-klaus.*` (Klaus Dormann NMOS functional PASS, cycles=96241388, PC=$3469, test_case=$F0, max=$2B)
+- residual: Φ1/Φ2 half-cycle bus timing collapsed; RDY/SO pins absent; full illegal-opcode matrix incomplete; 65C02 extended suite not run; Soft≠Physical (no Digilent flash / no pin timing)
 
 ### twin.cycle.go
 
@@ -31,8 +31,8 @@ Profile shrinks by deleting knobs that do not change `O`.
 - P: same as `cpu.mos6502` (soft Go coordinate system)
 - O: `cpu.Snapshot` / dump line / JSON
 - law: instruction-cycle FSM in `twin/cpu/`
-- witness: same FIRST WITNESS
-- residual: not transistor-level; not bitstream; coordinate system ≠ silicon
+- witness: FIRST WITNESS + Klaus Dormann soft harness (`tb/witness_klaus_test.go`)
+- residual: not transistor-level; not bitstream; coordinate system ≠ silicon; 65C02/undoc/RDY/SO residual
 
 ### asm.6502.tools
 

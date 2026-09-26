@@ -111,4 +111,10 @@ Host FPGA, Digilent cable, Vivado — **not** this `T`.
 
 ## Proven vs assumed (law layer)
 
-See README. Law prose here is **assumed teaching form** until a witness checks a row; FIRST WITNESS proves a **subset** of rows (reset, LDA/STA imm+zp, ADC/SBC±C, BCD 9+1, branches, JSR/RTS, stack, BRK vector).
+See README / `artifacts/RESIDUAL.md`.
+
+**Soft-witnessed (FIRST WITNESS):** reset, LDA/STA imm+zp, ADC/SBC±C, BCD 9+1, branches, JSR/RTS, stack, BRK vector — `artifacts/witness-first.*`.
+
+**Soft-witnessed (Klaus Dormann NMOS functional):** official opcode×mode×flag behavior through suite sections `$00`–`$2B` (completion marker `$F0`, success trap `$3469`, cycles=96241388) — `artifacts/witness-klaus.*`. Functional correctness ≠ per-cycle φ bus geometry.
+
+**Still assumed / residual:** 65C02 extras; undocumented illegals; RDY/SO; half-cycle bus; silicon; BCD N/V/Z die corners.

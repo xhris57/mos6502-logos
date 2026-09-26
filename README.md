@@ -38,32 +38,42 @@ Tables: `artifacts/LAW.md` (opcode×mode×cycle register/bus/flag transitions fo
 | JSR/RTS PC + 6/6 cycles | same |
 | PHP/PLA B+U; PHA/PLA | same |
 | Hand program sum/JSR/BRK vector | same |
+| **Klaus Dormann NMOS functional (all official opcode×mode sections $00–$2B → $F0)** | `tb/witness_klaus_test.go` → `artifacts/witness-klaus.*` — soft PASS, err=0, cycles=96241388, PC=$3469 |
 
 ```bash
-make witness    # go test ./tb/  — writes artifacts/witness-first.{json,txt}
+make witness         # FIRST WITNESS → artifacts/witness-first.{json,txt}
+make witness-klaus   # Klaus Dormann → artifacts/witness-klaus.{json,txt}
 ```
+
+ROM provenance: `testdata/SOURCE.txt` (Klaus2m5 @ `7954e2db…`, SHA256 `fa12bfc7…`).
 
 ## RESIDUAL (named honestly)
 
 1. **Soft≠Physical** — no Digilent flash; no pin / Φ1Φ2 half-cycle bus timing; instruction-cycle twin only.
 2. **Not silicon-proven** — twin↔law agreement is soft; Visual6502 is observation cite, not seed / not transistor netlist.
-3. **Undocumented opcodes** — twin stubs NOP/JAM only; full illegal matrix residual.
+3. **Undocumented opcodes** — twin stubs NOP/JAM only; full illegal matrix residual (Klaus NMOS suite does not cover illegals).
 4. **RDY / SO / mid-instruction IRQ edge cases** — not modeled.
-5. **Klaus Dormann functional test** — not fetched/run in v1 (hand FIRST WITNESS instead).
-6. **Opcode×mode×cycle scale** — ~151 official encodings × variable cycles ≫ SN76489 LFSR witness; LAW tables start with documented 56 mnemonics + modes; many rows still **assumed** until witnessed.
-7. **BCD N/Z/V** — NMOS teaching rule as in harvested twins; corner vs every die residual.
+5. **65C02 extras** — extended-opcode suite not run; not claimed.
+6. **Opcode×mode×cycle φ timing** — Klaus witnesses **functional** result/flags/modes for the official NMOS set; per-cycle bus geometry / half-cycle still **assumed**.
+7. **BCD N/Z/V** — NMOS teaching rule; Klaus decimal focuses valid-BCD carry; corner vs every die residual.
 
 ## Proven vs assumed
 
-**Proven in this repo (soft):** FIRST WITNESS checks above — `result=PASS err=0` in `artifacts/witness-first.txt`.
+**Proven in this repo (soft):**
+- FIRST WITNESS — `artifacts/witness-first.txt` (`result=PASS err=0`).
+- Klaus Dormann NMOS functional — `artifacts/witness-klaus.txt` (`result=PASS err=0 cycles=96241388 pc_end=3469 max_test_case=2B`). Soft≠Physical.
 
-**Assumed (not silicon-proven here):** remaining LAW rows; half-cycle bus; analog/electrical; any FPGA bitstream; Visual6502 geometry.
+**Newly witnessed (soft, via Klaus):** official NMOS opcode×mode×flag matrices exercised by sections through `$2B` (loads/stores/ALU/shifts/RMW/branches/stack/JMP/JSR/BRK/decimal ADC·SBC, etc.).
+
+**Still residual / assumed:** 65C02 extras; undocumented/illegal matrix; RDY/SO; Φ1/Φ2 half-cycle bus; silicon / FPGA bitstream; Visual6502 geometry; BCD N/V/Z die corners.
 
 ## Layout
 
 - `TRANSFORMERS.md` — catalog (`cpu.mos6502`, twin, asm) matching linguistic-fabric form
 - `artifacts/LAW.md` — law tables
-- `artifacts/witness-first.{json,txt}` — receipt
+- `artifacts/witness-first.{json,txt}` — FIRST WITNESS receipt
+- `artifacts/witness-klaus.{json,txt}` — Klaus Dormann soft receipt
+- `testdata/6502_functional_test.bin` + `SOURCE.txt` — Klaus ROM + provenance
 - `twin/cpu/` — Go cycle twin (reduced from pi6502-go) + dump format
 - `tb/` — FIRST WITNESS
 - `tools/asm.py` — harvested assembler
@@ -85,4 +95,6 @@ Ignore `*-private` duplicates.
 ```bash
 make witness
 cat artifacts/witness-first.txt
+make witness-klaus
+cat artifacts/witness-klaus.txt
 ```

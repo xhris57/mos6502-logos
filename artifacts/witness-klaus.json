@@ -1,0 +1,31 @@
+{
+  "suite": "klaus_dormann_6502_functional",
+  "result": "PASS",
+  "err": 0,
+  "pass": 1,
+  "cycles": 96241388,
+  "pc_end": "3469",
+  "test_case": 240,
+  "max_test_case": 43,
+  "section": "opcode_testing_complete",
+  "success_pc": "3469",
+  "start_pc": "0400",
+  "cycle_cap": 200000000,
+  "wall_ms": 239,
+  "rom": {
+    "bytes": 65536,
+    "commit": "7954e2dbb49c469ea286070bf46cdd71aeb29e4b",
+    "license": "GPL-3.0",
+    "path": "testdata/6502_functional_test.bin",
+    "sha256": "fa12bfc761e6f9057e4cc01a665a7b800ff01ae91f598af1e39a1201d01953fd",
+    "url": "https://raw.githubusercontent.com/Klaus2m5/6502_65C02_functional_tests/7954e2dbb49c469ea286070bf46cdd71aeb29e4b/bin_files/6502_functional_test.bin"
+  },
+  "notes": [
+    "Soft≠Physical — Digilent mutex Operator; NO flash",
+    "Source: Klaus2m5/6502_65C02_functional_tests @ 7954e2db (bin SHA256 fa12bfc7…)",
+    "Start PC=$0400; success trap=$3469; test_case@$0200",
+    "65C02 extended suite NOT run; undocumented opcodes residual",
+    "RDY/SO / mid-instruction IRQ residual"
+  ],
+  "soft_only": true
+}
