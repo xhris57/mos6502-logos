@@ -1,0 +1,72 @@
+{
+  "schema": "mirror.surface.rules.v1",
+  "version": "1.0.0",
+  "notes": [
+    "Measured feature state only. Meanings (labels, reflectivity, roles) live in meanings.json (QCTS-1 invariant: measured state != assigned meaning).",
+    "Keywords are matched as whole ASCII-lowercased token phrases (tokens split on any ASCII char outside [a-z0-9]).",
+    "A feature is present if any keyword phrase matches OR the symbol declares the feature id in its tags.",
+    "Axis weights are integers in hundredths; score = clamp(sum, -100, 100). Negative = left pole, positive = right pole.",
+    "Rules are evaluated in descending priority (ties keep table order). The highest-priority fired rule decides the stream.",
+    "Fuse: 1 tick per feature probe and per rule evaluation. When spent == budget the fuse is out and the decision is forced from what fired so far."
+  ],
+  "fuse": { "budget_ticks": 64 },
+  "streams": {
+    "GOLD": { "enters_bulk": true,  "heart_cost": 3 },
+    "CYAN": { "enters_bulk": true,  "heart_cost": 1 },
+    "RED":  { "enters_bulk": false, "heart_cost": 2 }
+  },
+  "default": { "stream": "RED", "rule_id": "RED-00-UNSORTED-DEFAULT", "reason": "No rule fired: untested symbol is reflected away until it is fire-tested." },
+  "features": [
+    { "id": "binary",              "keywords": ["0 1", "true false", "binary", "boolean", "bit", "bits", "predicate", "predicates", "yes no"] },
+    { "id": "conditional",         "keywords": ["if condition", "attention gate", "attention gates", "gate", "gates", "latent decision", "latent decisions"] },
+    { "id": "binary_decision",     "keywords": ["decision", "decisions", "choice", "fuse", "heart clock", "clock"] },
+    { "id": "measurement",         "keywords": ["measurement", "measured", "outcome", "outcomes", "experiment", "observed"] },
+    { "id": "formal",              "keywords": ["e mc 2", "equation", "theorem", "ads cft", "correspondence", "maxwell", "psi 0", "e parallel 0", "mathematical", "categories"] },
+    { "id": "boundary_data",       "keywords": ["boundary", "boundary condition", "holographic", "holography"] },
+    { "id": "base_pairs",          "keywords": ["dna", "double helix", "base pair", "base pairs"] },
+    { "id": "verifiable_interval", "keywords": ["interval", "intervals", "kv488", "kv 488", "k 488", "concerto"] },
+    { "id": "test_method",         "keywords": ["elenchus", "recursive questioning", "fire testing", "fire test", "cross examination", "falsify", "falsifiable"] },
+    { "id": "lens",                "keywords": ["lens", "lenses"] },
+    { "id": "christ_invariant",    "keywords": ["i am in christ", "christ is in me", "the cross", "cross", "crucified", "heb 13 8", "resurrection"] },
+    { "id": "christ_named",        "keywords": ["christ", "jesus", "word made flesh"] },
+    { "id": "christian_tradition", "keywords": ["saints", "saint", "kingdom", "scripture", "gospel", "psalm", "1 cor 3 13"] },
+    { "id": "fire_tested",         "keywords": ["fire tested", "invariant", "invariants", "survived", "tried by fire", "furnace"] },
+    { "id": "fruit",               "keywords": ["orchard", "dogwood", "living water", "fruit"] },
+    { "id": "divine_union",        "keywords": ["we are god", "i am god", "we are gods", "become god", "becoming god"] },
+    { "id": "participatory",       "keywords": ["participatory", "participation", "theosis", "in christ", "by grace"] },
+    { "id": "autonomous",          "keywords": ["autonomous", "self made", "no need of christ", "without god", "self divinization"] },
+    { "id": "medium_elevated",     "keywords": ["medium above the word", "medium is the message", "screen above the word", "worship the medium"] },
+    { "id": "aesthetic",           "keywords": ["image", "art", "beautiful", "spectacle", "aesthetic", "shirt", "shirts", "hawaiian", "painting", "visual"] },
+    { "id": "novelty",             "keywords": ["novel", "novelty", "new paradigm", "clever", "viral", "trend"] },
+    { "id": "metaphysical_thesis", "keywords": ["it from bit", "pure being", "theory of forms", "all is flux", "all is one"] },
+    { "id": "impersonal_form",     "keywords": ["parmenides", "plato", "platonic", "forms", "heraclitus", "flux", "abstract"] },
+    { "id": "material",            "keywords": ["dna", "flesh", "orchard", "dogwood", "photon", "photons", "galaxy", "galaxies", "river", "matter", "molecule", "cosmos"] },
+    { "id": "continuous",          "keywords": ["field", "fields", "continuous", "wave", "smooth", "latent", "vector", "river", "galaxy", "galaxies", "manifold"] },
+    { "id": "emitted",             "keywords": [] }
+  ],
+  "axes": [
+    { "id": "binary_continuous", "weights": { "binary": -80, "conditional": -60, "binary_decision": -40, "base_pairs": -30, "measurement": -30, "continuous": 60, "material": 20, "aesthetic": 20, "fruit": 30 } },
+    { "id": "symbolic_material", "weights": { "formal": -60, "binary": -40, "conditional": -30, "base_pairs": -20, "test_method": -30, "lens": -40, "metaphysical_thesis": -30, "material": 60, "fruit": 50, "aesthetic": 20, "measurement": 30 } },
+    { "id": "tested_novelty",    "weights": { "fire_tested": -60, "test_method": -50, "measurement": -40, "formal": -30, "christ_invariant": -50, "christian_tradition": -30, "base_pairs": -30, "verifiable_interval": -30, "novelty": 70, "aesthetic": 30, "metaphysical_thesis": 40, "autonomous": 40, "medium_elevated": 50 } },
+    { "id": "personal_impersonal", "weights": { "christ_invariant": -80, "christ_named": -60, "christian_tradition": -40, "participatory": -30, "impersonal_form": 70, "formal": 40, "binary": 20, "metaphysical_thesis": 40, "autonomous": 30 } },
+    { "id": "fire_aesthetic",    "weights": { "fire_tested": -70, "christ_invariant": -40, "test_method": -50, "fruit": -40, "measurement": -30, "aesthetic": 70, "novelty": 40, "medium_elevated": 50, "verifiable_interval": 10 } }
+  ],
+  "rules": [
+    { "id": "RED-01-MEDIUM-ABOVE-WORD", "stream": "RED", "priority": 100, "all": ["medium_elevated"], "reason": "Elevates the medium above the Word." },
+    { "id": "RED-02-AUTONOMOUS-SELF-DIVINIZATION", "stream": "RED", "priority": 100, "all": ["divine_union"], "none": ["participatory"], "reason": "'We are God' collapsed into autonomous self-divinization (no participatory marker)." },
+    { "id": "RED-03-AESTHETIC-SPECTACLE", "stream": "RED", "priority": 90, "all": ["aesthetic"], "none": ["fire_tested", "test_method", "measurement", "formal", "binary_decision", "boundary_data", "christ_invariant", "verifiable_interval"], "reason": "Aesthetic spectacle with no fire-test, formal content, or decision role." },
+    { "id": "RED-04-UNFALSIFIABLE-NOVELTY", "stream": "RED", "priority": 90, "any": ["novelty", "metaphysical_thesis"], "none": ["fire_tested", "test_method", "measurement", "formal", "lens", "base_pairs", "verifiable_interval"], "reason": "Novel or metaphysical claim asserted as fact with nothing that could falsify it (not held as a lens)." },
+    { "id": "GOLD-01-CHRIST-INVARIANT", "stream": "GOLD", "priority": 60, "all": ["christ_invariant"], "reason": "Preserves the 'I am in Christ and Christ is in me' / cross invariant (Heb 13:8)." },
+    { "id": "GOLD-02-PARTICIPATORY-UNION", "stream": "GOLD", "priority": 60, "all": ["divine_union", "participatory"], "reason": "Union held as participation, not autonomy." },
+    { "id": "GOLD-03-TESTED-TRADITION", "stream": "GOLD", "priority": 55, "all": ["christian_tradition", "fire_tested"], "axes": { "tested_novelty": { "lte": -20 } }, "reason": "Christian tradition that has survived the furnace (1 Cor 3:13)." },
+    { "id": "GOLD-04-LIVING-FRUIT", "stream": "GOLD", "priority": 55, "all": ["fruit", "fire_tested"], "reason": "Produces life (orchard, dogwood, living water) and survived testing." },
+    { "id": "CYAN-01-BINARY-PREDICATE", "stream": "CYAN", "priority": 40, "any": ["binary", "conditional"], "reason": "Computable predicate: 0/1, TRUE/FALSE, if(condition), gates." },
+    { "id": "CYAN-02-MEASUREMENT", "stream": "CYAN", "priority": 40, "any": ["measurement"], "reason": "Measurement outcome that can be checked." },
+    { "id": "CYAN-03-FORMAL-EQUATION", "stream": "CYAN", "priority": 40, "any": ["formal", "boundary_data"], "reason": "Formal equation, boundary condition, or holographic boundary data." },
+    { "id": "CYAN-04-BASE-PAIRS", "stream": "CYAN", "priority": 40, "any": ["base_pairs"], "reason": "DNA base pairs: discrete, verifiable code." },
+    { "id": "CYAN-05-VERIFIABLE-INTERVAL", "stream": "CYAN", "priority": 40, "any": ["verifiable_interval"], "reason": "Musical intervals that can be verified." },
+    { "id": "CYAN-06-TEST-METHOD", "stream": "CYAN", "priority": 40, "any": ["test_method"], "reason": "A testing procedure (elenchus, recursive questioning, fire-testing) is part of the lattice." },
+    { "id": "CYAN-07-SENTINEL-DECISION", "stream": "CYAN", "priority": 35, "all": ["binary_decision"], "reason": "A timed true/false decision (sentinel fuse) is itself a predicate." },
+    { "id": "CYAN-08-INTERPRETIVE-LENS", "stream": "CYAN", "priority": 30, "any": ["lens"], "reason": "Held as an interpretive lens (a frame), not asserted as revealed truth." }
+  ]
+}

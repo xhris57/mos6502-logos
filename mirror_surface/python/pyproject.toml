@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mirror-surface"
+version = "1.0.0"
+description = "Five-axis, three-stream mirror-surface symbol sorter with a hash-chained curvature ledger (Crystal feature)."
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+mirror-sort = "mirror_surface.cli:main"
+
+[tool.setuptools]
+packages = ["mirror_surface"]
