@@ -1,0 +1,2489 @@
+{
+  "schema": "mirror.surface.golden.v1",
+  "rules_sha256": "aa83ea7e302aa5ed2dd9346acf560422afb3d2f9419d8a6b9593bd8bd01d001d",
+  "meanings_sha256": "b7b299366df274e737ddfb4a2355d0643bdb1a68856bdecbda5bb49203a610f6",
+  "tokenize_cases": [
+    {
+      "text": "if(condition)",
+      "tokens": [
+        "if",
+        "condition"
+      ]
+    },
+    {
+      "text": "E=mc^2",
+      "tokens": [
+        "e",
+        "mc",
+        "2"
+      ]
+    },
+    {
+      "text": "Maxwell E_parallel=0",
+      "tokens": [
+        "maxwell",
+        "e",
+        "parallel",
+        "0"
+      ]
+    },
+    {
+      "text": "We are God (participatory, not autonomous)",
+      "tokens": [
+        "we",
+        "are",
+        "god",
+        "participatory",
+        "not",
+        "autonomous"
+      ]
+    },
+    {
+      "text": "\u03c8=0 caf\u00e9",
+      "tokens": [
+        "\u03c8",
+        "0",
+        "caf\u00e9"
+      ]
+    },
+    {
+      "text": "KV488",
+      "tokens": [
+        "kv488"
+      ]
+    },
+    {
+      "text": "",
+      "tokens": []
+    }
+  ],
+  "canonical_probe": {
+    "value": {
+      "k": "\u03c8 caf\u00e9 \ud83d\udd25 \"q\" \\ \n\t\u0001",
+      "b": true,
+      "n": null,
+      "i": -7,
+      "a": []
+    },
+    "canonical": "{\"a\":[],\"b\":true,\"i\":-7,\"k\":\"\\u03c8 caf\\u00e9 \\ud83d\\udd25 \\\"q\\\" \\\\ \\n\\t\\u0001\",\"n\":null}"
+  },
+  "cases": [
+    {
+      "input": {
+        "id": "S01-binary-predicates",
+        "text": "Binary 0/1 and TRUE/FALSE predicates",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S01-binary-predicates",
+        "features": [
+          "binary"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -80,
+          "symbolic_material": -40,
+          "tested_novelty": 0,
+          "personal_impersonal": 20,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-01-BINARY-PREDICATE"
+        ],
+        "deciding_rule": "CYAN-01-BINARY-PREDICATE",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "6ee153485d551cde1c4c1cc1dacf7515cbde7a5cadd9c2d1f508568204ef6b66"
+    },
+    {
+      "input": {
+        "id": "S01-binary-predicates~r",
+        "text": "emitted CYAN decision on S01-binary-predicates",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S01-binary-predicates~r",
+        "features": [
+          "binary",
+          "binary_decision",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -100,
+          "symbolic_material": -40,
+          "tested_novelty": 0,
+          "personal_impersonal": 20,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-01-BINARY-PREDICATE",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-01-BINARY-PREDICATE",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "7e372cb9d271dde81d1feb36e8b8efa4f7d7463cd23648bc800a208d038dbbe3"
+    },
+    {
+      "input": {
+        "id": "S02-if-condition",
+        "text": "if(condition), attention gates, latent decisions",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S02-if-condition",
+        "features": [
+          "binary_decision",
+          "conditional",
+          "continuous"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": -30,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-01-BINARY-PREDICATE",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-01-BINARY-PREDICATE",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "5d84889069a575c189e3b6f0560ff64c66f3e7f26b1edd4983c924da03a80879"
+    },
+    {
+      "input": {
+        "id": "S02-if-condition~r",
+        "text": "emitted CYAN decision on S02-if-condition",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S02-if-condition~r",
+        "features": [
+          "binary_decision",
+          "conditional",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -100,
+          "symbolic_material": -30,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-01-BINARY-PREDICATE",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-01-BINARY-PREDICATE",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "f9f0e4db406636dc4340949cc769347c58101c6ff58de59325fa86e7a513964b"
+    },
+    {
+      "input": {
+        "id": "S03-e-mc2",
+        "text": "E=mc^2",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S03-e-mc2",
+        "features": [
+          "formal"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": -60,
+          "tested_novelty": -30,
+          "personal_impersonal": 40,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-03-FORMAL-EQUATION"
+        ],
+        "deciding_rule": "CYAN-03-FORMAL-EQUATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "6a8e2627e50197828bae187949c4585c43a473d0b7f4d59bf25dc585b145af50"
+    },
+    {
+      "input": {
+        "id": "S03-e-mc2~r",
+        "text": "emitted CYAN decision on S03-e-mc2",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S03-e-mc2~r",
+        "features": [
+          "binary_decision",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "4807765614aa7479a58e0640ab3fb8100b1240636638482abb031c4a7ab9c11f"
+    },
+    {
+      "input": {
+        "id": "S04-psi-0",
+        "text": "psi=0",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S04-psi-0",
+        "features": [
+          "formal"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": -60,
+          "tested_novelty": -30,
+          "personal_impersonal": 40,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-03-FORMAL-EQUATION"
+        ],
+        "deciding_rule": "CYAN-03-FORMAL-EQUATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "381160cd63c7ad22943e24d75ac9bee215e97d727a5535a405eac3360c447b34"
+    },
+    {
+      "input": {
+        "id": "S04-psi-0~r",
+        "text": "emitted CYAN decision on S04-psi-0",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S04-psi-0~r",
+        "features": [
+          "binary_decision",
+          "emitted",
+          "formal"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": -60,
+          "tested_novelty": -30,
+          "personal_impersonal": 40,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-03-FORMAL-EQUATION",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-03-FORMAL-EQUATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "48021a9fb8fb8b903c94618b8acee24b97b51e54bc9620d1d24b7d8ee9254233"
+    },
+    {
+      "input": {
+        "id": "S05-maxwell",
+        "text": "Maxwell boundary condition E_parallel=0",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S05-maxwell",
+        "features": [
+          "boundary_data",
+          "formal"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": -60,
+          "tested_novelty": -30,
+          "personal_impersonal": 40,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-03-FORMAL-EQUATION"
+        ],
+        "deciding_rule": "CYAN-03-FORMAL-EQUATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "200a416aeaa37da5823f00d7fd1a4e3c397f9272edb2bbf5321f1bf35e181e40"
+    },
+    {
+      "input": {
+        "id": "S05-maxwell~r",
+        "text": "emitted CYAN decision on S05-maxwell",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S05-maxwell~r",
+        "features": [
+          "binary_decision",
+          "emitted",
+          "formal"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": -60,
+          "tested_novelty": -30,
+          "personal_impersonal": 40,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-03-FORMAL-EQUATION",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-03-FORMAL-EQUATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "c5eb49aeca436cb81b20114c1e234d0f290a5e06bed74da4d9925353121af4e2"
+    },
+    {
+      "input": {
+        "id": "S06-ads-cft",
+        "text": "AdS/CFT holography",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S06-ads-cft",
+        "features": [
+          "boundary_data",
+          "formal"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": -60,
+          "tested_novelty": -30,
+          "personal_impersonal": 40,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-03-FORMAL-EQUATION"
+        ],
+        "deciding_rule": "CYAN-03-FORMAL-EQUATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "d77126847e754268a3967afb90155f976e5568a63bd9af5d04b5c9b75e96be5d"
+    },
+    {
+      "input": {
+        "id": "S06-ads-cft~r",
+        "text": "emitted CYAN decision on S06-ads-cft",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S06-ads-cft~r",
+        "features": [
+          "binary_decision",
+          "emitted",
+          "formal"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": -60,
+          "tested_novelty": -30,
+          "personal_impersonal": 40,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-03-FORMAL-EQUATION",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-03-FORMAL-EQUATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "132830cd3f96437acab913fa026e2b25b890bcb7f6716495e8b9e1537db022d5"
+    },
+    {
+      "input": {
+        "id": "S07-it-from-bit",
+        "text": "It from Bit (Wheeler)",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S07-it-from-bit",
+        "features": [
+          "binary",
+          "metaphysical_thesis"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -80,
+          "symbolic_material": -70,
+          "tested_novelty": 40,
+          "personal_impersonal": 60,
+          "fire_aesthetic": 0
+        },
+        "stream": "RED",
+        "rules_fired": [
+          "RED-04-UNFALSIFIABLE-NOVELTY",
+          "CYAN-01-BINARY-PREDICATE"
+        ],
+        "deciding_rule": "RED-04-UNFALSIFIABLE-NOVELTY",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 2
+        },
+        "entered_bulk": false
+      },
+      "core_sha256": "07b568fe6210d7d4798e3515796661beac56fdbebda4edf35d027aff5bf42257"
+    },
+    {
+      "input": {
+        "id": "S07-it-from-bit~r",
+        "text": "emitted RED decision on S07-it-from-bit",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S07-it-from-bit~r",
+        "features": [
+          "binary",
+          "binary_decision",
+          "emitted",
+          "metaphysical_thesis"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -100,
+          "symbolic_material": -70,
+          "tested_novelty": 40,
+          "personal_impersonal": 60,
+          "fire_aesthetic": 0
+        },
+        "stream": "RED",
+        "rules_fired": [
+          "RED-04-UNFALSIFIABLE-NOVELTY",
+          "CYAN-01-BINARY-PREDICATE",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "RED-04-UNFALSIFIABLE-NOVELTY",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 2
+        },
+        "entered_bulk": false
+      },
+      "core_sha256": "02cba81b245d6ebfd3c21396cae96194109dda686c90a2039c08949f3871cc0f"
+    },
+    {
+      "input": {
+        "id": "S08-dna",
+        "text": "DNA double helix",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S08-dna",
+        "features": [
+          "base_pairs",
+          "material"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -10,
+          "symbolic_material": 40,
+          "tested_novelty": -30,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-04-BASE-PAIRS"
+        ],
+        "deciding_rule": "CYAN-04-BASE-PAIRS",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "306af3dbd4bacb8ab74acf05fe1c0a55b45ea569f1d4a241a62880a878ea8aa6"
+    },
+    {
+      "input": {
+        "id": "S08-dna~r",
+        "text": "emitted CYAN decision on S08-dna",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S08-dna~r",
+        "features": [
+          "base_pairs",
+          "binary_decision",
+          "emitted",
+          "material"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -50,
+          "symbolic_material": 40,
+          "tested_novelty": -30,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-04-BASE-PAIRS",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-04-BASE-PAIRS",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "2a4169bcc06a146f237ea3cffe98f5168886a60769c41e0d222916b1d2af39a6"
+    },
+    {
+      "input": {
+        "id": "S09-mozart-kv488",
+        "text": "Mozart Piano Concerto No. 23, KV488",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S09-mozart-kv488",
+        "features": [
+          "verifiable_interval"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": 0,
+          "tested_novelty": -30,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 10
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-05-VERIFIABLE-INTERVAL"
+        ],
+        "deciding_rule": "CYAN-05-VERIFIABLE-INTERVAL",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "8e9d3be1c5982fdd0ebfd1cf3e4fa0b48cd1438789348f9a220f271ae20e2ec2"
+    },
+    {
+      "input": {
+        "id": "S09-mozart-kv488~r",
+        "text": "emitted CYAN decision on S09-mozart-kv488",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S09-mozart-kv488~r",
+        "features": [
+          "binary_decision",
+          "emitted",
+          "verifiable_interval"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": -30,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 10
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-05-VERIFIABLE-INTERVAL",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-05-VERIFIABLE-INTERVAL",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "637e79d5f320ad191dbb43b5317f3d7f90e5c406e468dd7db73be7dcd9ae4564"
+    },
+    {
+      "input": {
+        "id": "S10-in-christ",
+        "text": "I am in Christ and Christ is in me",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S10-in-christ",
+        "features": [
+          "christ_invariant",
+          "christ_named",
+          "participatory"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": 0,
+          "tested_novelty": -50,
+          "personal_impersonal": -100,
+          "fire_aesthetic": -40
+        },
+        "stream": "GOLD",
+        "rules_fired": [
+          "GOLD-01-CHRIST-INVARIANT"
+        ],
+        "deciding_rule": "GOLD-01-CHRIST-INVARIANT",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 3
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "a874c5ea2e8bd725bcdcaf5948ff9eecddc15b95421c76e9fbaa7a08dfb66771"
+    },
+    {
+      "input": {
+        "id": "S10-in-christ~r",
+        "text": "emitted GOLD decision on S10-in-christ",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S10-in-christ~r",
+        "features": [
+          "binary_decision",
+          "christ_named",
+          "emitted",
+          "participatory"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": -90,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "7c90eb7154fe7108438a776b2817d3260215d2c7613b0fe48853fe1fffd6eb0d"
+    },
+    {
+      "input": {
+        "id": "S11-the-cross",
+        "text": "The cross",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S11-the-cross",
+        "features": [
+          "christ_invariant"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": 0,
+          "tested_novelty": -50,
+          "personal_impersonal": -80,
+          "fire_aesthetic": -40
+        },
+        "stream": "GOLD",
+        "rules_fired": [
+          "GOLD-01-CHRIST-INVARIANT"
+        ],
+        "deciding_rule": "GOLD-01-CHRIST-INVARIANT",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 3
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "9a375c13db20661b273d6cab9c1f9ccd51fde6436ad04203047d77e2f2ef6fe0"
+    },
+    {
+      "input": {
+        "id": "S11-the-cross~r",
+        "text": "emitted GOLD decision on S11-the-cross",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S11-the-cross~r",
+        "features": [
+          "binary_decision",
+          "christ_invariant",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": -50,
+          "personal_impersonal": -80,
+          "fire_aesthetic": -40
+        },
+        "stream": "GOLD",
+        "rules_fired": [
+          "GOLD-01-CHRIST-INVARIANT",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "GOLD-01-CHRIST-INVARIANT",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 3
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "f8e367d204b0051f73cfd2dc9141ca1ffa1a2e129229a324bcc6026e838e75db"
+    },
+    {
+      "input": {
+        "id": "S12-we-are-god",
+        "text": "We are God (participatory, not autonomous)",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S12-we-are-god",
+        "features": [
+          "autonomous",
+          "divine_union",
+          "participatory"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": 0,
+          "tested_novelty": 40,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "GOLD",
+        "rules_fired": [
+          "GOLD-02-PARTICIPATORY-UNION"
+        ],
+        "deciding_rule": "GOLD-02-PARTICIPATORY-UNION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 3
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "1194885c627a1275becefcbe17c66f4e70373346bcb9b7a43f5d07449dd83bf0"
+    },
+    {
+      "input": {
+        "id": "S12-we-are-god~r",
+        "text": "emitted GOLD decision on S12-we-are-god",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S12-we-are-god~r",
+        "features": [
+          "binary_decision",
+          "divine_union",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "RED",
+        "rules_fired": [
+          "RED-02-AUTONOMOUS-SELF-DIVINIZATION",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "RED-02-AUTONOMOUS-SELF-DIVINIZATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 2
+        },
+        "entered_bulk": false
+      },
+      "core_sha256": "f83782410d303453c122b1490b991842324c308d4943163aff77f411484f3a12"
+    },
+    {
+      "input": {
+        "id": "S13-green-fish-people",
+        "text": "Green fish-people in circuit-patterned Hawaiian shirts with crosses and heart-shaped clock bombs (decision under time pressure, fuse of the heart)",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S13-green-fish-people",
+        "features": [
+          "aesthetic",
+          "binary_decision"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -20,
+          "symbolic_material": 20,
+          "tested_novelty": 30,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 70
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "6108ae22fc230c08b4b2b90059d50f8788fe85ececd881a0a02f05bdf07b0208"
+    },
+    {
+      "input": {
+        "id": "S13-green-fish-people~r",
+        "text": "emitted CYAN decision on S13-green-fish-people",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S13-green-fish-people~r",
+        "features": [
+          "binary_decision",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "0e997dbc2754f6913a046c6fe6755abc6b49fa268e9511a2372790c4ddcb2253"
+    },
+    {
+      "input": {
+        "id": "S14-holographic-theorem-image",
+        "text": "Holographic theorem image: vertical glass boundary, symbolic tapestry on the left, emergent cosmos on the right",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S14-holographic-theorem-image",
+        "features": [
+          "aesthetic",
+          "boundary_data",
+          "formal",
+          "material"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 40,
+          "symbolic_material": 20,
+          "tested_novelty": 0,
+          "personal_impersonal": 40,
+          "fire_aesthetic": 70
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-03-FORMAL-EQUATION"
+        ],
+        "deciding_rule": "CYAN-03-FORMAL-EQUATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "24db062a24278ac9ae77057d9654df42c94520710887d88b7f04588235181b42"
+    },
+    {
+      "input": {
+        "id": "S14-holographic-theorem-image~r",
+        "text": "emitted CYAN decision on S14-holographic-theorem-image",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S14-holographic-theorem-image~r",
+        "features": [
+          "aesthetic",
+          "binary_decision",
+          "boundary_data",
+          "emitted",
+          "formal"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -20,
+          "symbolic_material": -40,
+          "tested_novelty": 0,
+          "personal_impersonal": 40,
+          "fire_aesthetic": 70
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-03-FORMAL-EQUATION",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-03-FORMAL-EQUATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "a4fb9391e4052a0c7ad2a23e04829124209aae083d60c6f1ba4b49b95e51de55"
+    },
+    {
+      "input": {
+        "id": "S15-parmenides-being",
+        "text": "Parmenides' Being (Greek philosophical lens)",
+        "tags": [
+          "metaphysical_thesis"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S15-parmenides-being",
+        "features": [
+          "impersonal_form",
+          "lens",
+          "metaphysical_thesis"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": -70,
+          "tested_novelty": 40,
+          "personal_impersonal": 100,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-08-INTERPRETIVE-LENS"
+        ],
+        "deciding_rule": "CYAN-08-INTERPRETIVE-LENS",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "be6a39246fb5523f2b81816a0f7fc99ad88046046e85c1cd6f2e62e56901d551"
+    },
+    {
+      "input": {
+        "id": "S15-parmenides-being~r",
+        "text": "emitted CYAN decision on S15-parmenides-being",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S15-parmenides-being~r",
+        "features": [
+          "binary_decision",
+          "emitted",
+          "impersonal_form"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 70,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "269a84d6fc724f42be8b992cae483ab05e080ac8d50ddcaafcde8e417ea6ac42"
+    },
+    {
+      "input": {
+        "id": "S16-plato-forms",
+        "text": "Plato's Forms (Greek philosophical lens)",
+        "tags": [
+          "metaphysical_thesis"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S16-plato-forms",
+        "features": [
+          "impersonal_form",
+          "lens",
+          "metaphysical_thesis"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": -70,
+          "tested_novelty": 40,
+          "personal_impersonal": 100,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-08-INTERPRETIVE-LENS"
+        ],
+        "deciding_rule": "CYAN-08-INTERPRETIVE-LENS",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "c64873159581b28b5b768e75e9f557ced7f7b6c1cc18d161a4abca27c72c1986"
+    },
+    {
+      "input": {
+        "id": "S16-plato-forms~r",
+        "text": "emitted CYAN decision on S16-plato-forms",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S16-plato-forms~r",
+        "features": [
+          "binary_decision",
+          "emitted",
+          "impersonal_form"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 70,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "a5fc713ea8689f47c72e06715ae932ef6032fe5246fc2d3b71959c5f54558227"
+    },
+    {
+      "input": {
+        "id": "S17-heraclitus-logos",
+        "text": "Heraclitus' Logos (Greek philosophical lens)",
+        "tags": [
+          "metaphysical_thesis"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S17-heraclitus-logos",
+        "features": [
+          "impersonal_form",
+          "lens",
+          "metaphysical_thesis"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": -70,
+          "tested_novelty": 40,
+          "personal_impersonal": 100,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-08-INTERPRETIVE-LENS"
+        ],
+        "deciding_rule": "CYAN-08-INTERPRETIVE-LENS",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "8a4a03cdd14994e1352e0d804e55021e05c107f45c38bb2f6f5f7f90f028e010"
+    },
+    {
+      "input": {
+        "id": "S17-heraclitus-logos~r",
+        "text": "emitted CYAN decision on S17-heraclitus-logos",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S17-heraclitus-logos~r",
+        "features": [
+          "binary_decision",
+          "emitted",
+          "impersonal_form"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 70,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "ccae0f1c1b42bc8cc770515fb5c6124555733e234f885a7650099748206dca22"
+    },
+    {
+      "input": {
+        "id": "S18-aristotle-categories",
+        "text": "Aristotle's categories (Greek philosophical lens)",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S18-aristotle-categories",
+        "features": [
+          "formal",
+          "lens"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": -100,
+          "tested_novelty": -30,
+          "personal_impersonal": 40,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-03-FORMAL-EQUATION",
+          "CYAN-08-INTERPRETIVE-LENS"
+        ],
+        "deciding_rule": "CYAN-03-FORMAL-EQUATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "09a8cb6ae8edbe048898d4b3d7510e7e8d9a0b7b11de7f43298f3e5a98ce9b3e"
+    },
+    {
+      "input": {
+        "id": "S18-aristotle-categories~r",
+        "text": "emitted CYAN decision on S18-aristotle-categories",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S18-aristotle-categories~r",
+        "features": [
+          "binary_decision",
+          "emitted",
+          "formal"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": -60,
+          "tested_novelty": -30,
+          "personal_impersonal": 40,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-03-FORMAL-EQUATION",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-03-FORMAL-EQUATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "5e5587412aaa5b2672b08ccb57f4c5546b45400d1ac7b42a6d6bcbefeee56dea"
+    },
+    {
+      "input": {
+        "id": "S19-socratic-elenchus",
+        "text": "Socratic elenchus (Greek philosophical lens)",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S19-socratic-elenchus",
+        "features": [
+          "lens",
+          "test_method"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": -70,
+          "tested_novelty": -50,
+          "personal_impersonal": 0,
+          "fire_aesthetic": -50
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-06-TEST-METHOD",
+          "CYAN-08-INTERPRETIVE-LENS"
+        ],
+        "deciding_rule": "CYAN-06-TEST-METHOD",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "6eded87cf359f1416cd7a0e80698cfb463cdf09c90dda26ade3d48cc39d3068c"
+    },
+    {
+      "input": {
+        "id": "S19-socratic-elenchus~r",
+        "text": "emitted CYAN decision on S19-socratic-elenchus",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S19-socratic-elenchus~r",
+        "features": [
+          "binary_decision",
+          "emitted",
+          "test_method"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": -30,
+          "tested_novelty": -50,
+          "personal_impersonal": 0,
+          "fire_aesthetic": -50
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-06-TEST-METHOD",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-06-TEST-METHOD",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "23f51c4ddf0eeb42925fb47fcb7a1797b6fed654d506584902b7a5ba3ad45408"
+    },
+    {
+      "input": {
+        "id": "S20-stoic-citadel",
+        "text": "Stoic citadel (Greek philosophical lens)",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S20-stoic-citadel",
+        "features": [
+          "lens"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": -40,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-08-INTERPRETIVE-LENS"
+        ],
+        "deciding_rule": "CYAN-08-INTERPRETIVE-LENS",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "8a946f0a650ed94b9239134a3c474d83a94461001635727227925d1b8b5ea047"
+    },
+    {
+      "input": {
+        "id": "S20-stoic-citadel~r",
+        "text": "emitted CYAN decision on S20-stoic-citadel",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S20-stoic-citadel~r",
+        "features": [
+          "binary_decision",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "8907d164a15d37b0538c0474ea1b1b9d4108a0c7fc7e278e78edf5e854bef905"
+    },
+    {
+      "input": {
+        "id": "S21-recursive-questioning",
+        "text": "Recursive questioning",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S21-recursive-questioning",
+        "features": [
+          "test_method"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": -30,
+          "tested_novelty": -50,
+          "personal_impersonal": 0,
+          "fire_aesthetic": -50
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-06-TEST-METHOD"
+        ],
+        "deciding_rule": "CYAN-06-TEST-METHOD",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "25d6353fc18d2d12e0fe68c5d68bb454c0e94b7b601839e12662502c536aa9a7"
+    },
+    {
+      "input": {
+        "id": "S21-recursive-questioning~r",
+        "text": "emitted CYAN decision on S21-recursive-questioning",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S21-recursive-questioning~r",
+        "features": [
+          "binary_decision",
+          "emitted",
+          "test_method"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": -30,
+          "tested_novelty": -50,
+          "personal_impersonal": 0,
+          "fire_aesthetic": -50
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-06-TEST-METHOD",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-06-TEST-METHOD",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "2ca432bb517afd5d2cdda132593557482711af97c8746065daff2997ce39fd07"
+    },
+    {
+      "input": {
+        "id": "S22-mirror-for-saints",
+        "text": "Mirror for Saints",
+        "tags": [
+          "fire_tested"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S22-mirror-for-saints",
+        "features": [
+          "christian_tradition",
+          "fire_tested"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": 0,
+          "tested_novelty": -90,
+          "personal_impersonal": -40,
+          "fire_aesthetic": -70
+        },
+        "stream": "GOLD",
+        "rules_fired": [
+          "GOLD-03-TESTED-TRADITION"
+        ],
+        "deciding_rule": "GOLD-03-TESTED-TRADITION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 3
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "d0399826d65af355ffc8689223168a91dd85938f7bd40773689e465b5fd99859"
+    },
+    {
+      "input": {
+        "id": "S22-mirror-for-saints~r",
+        "text": "emitted GOLD decision on S22-mirror-for-saints",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S22-mirror-for-saints~r",
+        "features": [
+          "binary_decision",
+          "christian_tradition",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": -30,
+          "personal_impersonal": -40,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "4515ff60bb44af5d7d208b1b93d0a3da6e60b0cfe7959d2573985dcd78a9c103"
+    },
+    {
+      "input": {
+        "id": "S23-kingdom-invariants",
+        "text": "Kingdom invariants",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S23-kingdom-invariants",
+        "features": [
+          "christian_tradition",
+          "fire_tested"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": 0,
+          "tested_novelty": -90,
+          "personal_impersonal": -40,
+          "fire_aesthetic": -70
+        },
+        "stream": "GOLD",
+        "rules_fired": [
+          "GOLD-03-TESTED-TRADITION"
+        ],
+        "deciding_rule": "GOLD-03-TESTED-TRADITION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 3
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "eac786a4619bc54d7ee6af21a766ebf88988f9004472cb0871514d5940614beb"
+    },
+    {
+      "input": {
+        "id": "S23-kingdom-invariants~r",
+        "text": "emitted GOLD decision on S23-kingdom-invariants",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S23-kingdom-invariants~r",
+        "features": [
+          "binary_decision",
+          "christian_tradition",
+          "emitted",
+          "fire_tested"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": -90,
+          "personal_impersonal": -40,
+          "fire_aesthetic": -70
+        },
+        "stream": "GOLD",
+        "rules_fired": [
+          "GOLD-03-TESTED-TRADITION",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "GOLD-03-TESTED-TRADITION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 3
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "0967e3da55937629796f81589c586c7cb908fb0c38d68b10ee20bc7c4cb6be2a"
+    },
+    {
+      "input": {
+        "id": "S24-fire-testing-language",
+        "text": "Fire-testing language",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S24-fire-testing-language",
+        "features": [
+          "test_method"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": -30,
+          "tested_novelty": -50,
+          "personal_impersonal": 0,
+          "fire_aesthetic": -50
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-06-TEST-METHOD"
+        ],
+        "deciding_rule": "CYAN-06-TEST-METHOD",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "8f034ba4767b841a4cf4ba0b90eb3207e8e71651697d4264410cd68cf48dee86"
+    },
+    {
+      "input": {
+        "id": "S24-fire-testing-language~r",
+        "text": "emitted CYAN decision on S24-fire-testing-language",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "S24-fire-testing-language~r",
+        "features": [
+          "binary_decision",
+          "emitted",
+          "test_method"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": -30,
+          "tested_novelty": -50,
+          "personal_impersonal": 0,
+          "fire_aesthetic": -50
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-06-TEST-METHOD",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-06-TEST-METHOD",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "a626575226e16731c209c28871c8583195f0bd0b6db09eb59db21ad3a15ec718"
+    },
+    {
+      "input": {
+        "id": "X01-autonomous-divinization",
+        "text": "We are God: autonomous, self-made, no need of Christ",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X01-autonomous-divinization",
+        "features": [
+          "autonomous",
+          "christ_named",
+          "divine_union"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": 0,
+          "tested_novelty": 40,
+          "personal_impersonal": -30,
+          "fire_aesthetic": 0
+        },
+        "stream": "RED",
+        "rules_fired": [
+          "RED-02-AUTONOMOUS-SELF-DIVINIZATION"
+        ],
+        "deciding_rule": "RED-02-AUTONOMOUS-SELF-DIVINIZATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 2
+        },
+        "entered_bulk": false
+      },
+      "core_sha256": "6afb320c495087098340fb31f81d73087595e5880756046e6477451c263b28ad"
+    },
+    {
+      "input": {
+        "id": "X01-autonomous-divinization~r",
+        "text": "emitted RED decision on X01-autonomous-divinization",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X01-autonomous-divinization~r",
+        "features": [
+          "autonomous",
+          "binary_decision",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": 40,
+          "personal_impersonal": 30,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "2ef2c1ecb7f6bf99d0852ccc54d04b43732d80ba3dcf05ac1e43808cb4daaa00"
+    },
+    {
+      "input": {
+        "id": "X02-spectacle",
+        "text": "A beautiful viral spectacle image, pure aesthetic",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X02-spectacle",
+        "features": [
+          "aesthetic",
+          "novelty"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 20,
+          "symbolic_material": 20,
+          "tested_novelty": 100,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 100
+        },
+        "stream": "RED",
+        "rules_fired": [
+          "RED-03-AESTHETIC-SPECTACLE",
+          "RED-04-UNFALSIFIABLE-NOVELTY"
+        ],
+        "deciding_rule": "RED-03-AESTHETIC-SPECTACLE",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 2
+        },
+        "entered_bulk": false
+      },
+      "core_sha256": "b6fc603e5ca5f18a48bbd717dc2d252fe2dcd32bedb359949e961d7a0b51b327"
+    },
+    {
+      "input": {
+        "id": "X02-spectacle~r",
+        "text": "emitted RED decision on X02-spectacle",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X02-spectacle~r",
+        "features": [
+          "aesthetic",
+          "binary_decision",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -20,
+          "symbolic_material": 20,
+          "tested_novelty": 30,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 70
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "d182654d31159a8e39040c0981f4330b0e2e2f4bf1232973b6fbcfde35a0a394"
+    },
+    {
+      "input": {
+        "id": "X03-medium-above-word",
+        "text": "The medium is the message: the screen above the Word",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X03-medium-above-word",
+        "features": [
+          "medium_elevated"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": 0,
+          "tested_novelty": 50,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 50
+        },
+        "stream": "RED",
+        "rules_fired": [
+          "RED-01-MEDIUM-ABOVE-WORD"
+        ],
+        "deciding_rule": "RED-01-MEDIUM-ABOVE-WORD",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 2
+        },
+        "entered_bulk": false
+      },
+      "core_sha256": "bdfe79898a54c7c029445c77fb0a136abc9d13ce4a26d6551241446352249835"
+    },
+    {
+      "input": {
+        "id": "X03-medium-above-word~r",
+        "text": "emitted RED decision on X03-medium-above-word",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X03-medium-above-word~r",
+        "features": [
+          "binary_decision",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "8706ca03dc0f443b7193cd29eff6444c040f82b5ffa006fde5439d3a5d98434b"
+    },
+    {
+      "input": {
+        "id": "X04-orchard-fruit",
+        "text": "Orchard fruit, fire-tested through drought",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X04-orchard-fruit",
+        "features": [
+          "fire_tested",
+          "fruit",
+          "material"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 50,
+          "symbolic_material": 100,
+          "tested_novelty": -60,
+          "personal_impersonal": 0,
+          "fire_aesthetic": -100
+        },
+        "stream": "GOLD",
+        "rules_fired": [
+          "GOLD-04-LIVING-FRUIT"
+        ],
+        "deciding_rule": "GOLD-04-LIVING-FRUIT",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 3
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "8bb794864fe2cdab8273bc750b62aa119b17c90e4224f835cf9611aa36e65f18"
+    },
+    {
+      "input": {
+        "id": "X04-orchard-fruit~r",
+        "text": "emitted GOLD decision on X04-orchard-fruit",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X04-orchard-fruit~r",
+        "features": [
+          "binary_decision",
+          "emitted",
+          "fruit",
+          "material"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 10,
+          "symbolic_material": 100,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": -40
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "801b41317185119702571edf23621f7ca8882fcf9348c87d92befebbd300e653"
+    },
+    {
+      "input": {
+        "id": "X05-unsorted",
+        "text": "lorem ipsum",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X05-unsorted",
+        "features": [],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "RED",
+        "rules_fired": [],
+        "deciding_rule": "RED-00-UNSORTED-DEFAULT",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 2
+        },
+        "entered_bulk": false
+      },
+      "core_sha256": "79f434a3afd1c78dc781829d17421a602e0d87665ca9e045da07f7b2853db626"
+    },
+    {
+      "input": {
+        "id": "X05-unsorted~r",
+        "text": "emitted RED decision on X05-unsorted",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X05-unsorted~r",
+        "features": [
+          "binary_decision",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "f4859cd4ab7b3d3d06a5548cc3965e602fa93cf56703faf060c6ae8ba14f14d0"
+    },
+    {
+      "input": {
+        "id": "X06-bare-we-are-god",
+        "text": "We are God",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X06-bare-we-are-god",
+        "features": [
+          "divine_union"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "RED",
+        "rules_fired": [
+          "RED-02-AUTONOMOUS-SELF-DIVINIZATION"
+        ],
+        "deciding_rule": "RED-02-AUTONOMOUS-SELF-DIVINIZATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 2
+        },
+        "entered_bulk": false
+      },
+      "core_sha256": "2a777f414ecf9810ca89723b904830ffce2e57f3a0055182bc6c7734387db1ac"
+    },
+    {
+      "input": {
+        "id": "X06-bare-we-are-god~r",
+        "text": "emitted RED decision on X06-bare-we-are-god",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X06-bare-we-are-god~r",
+        "features": [
+          "binary_decision",
+          "divine_union",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "RED",
+        "rules_fired": [
+          "RED-02-AUTONOMOUS-SELF-DIVINIZATION",
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "RED-02-AUTONOMOUS-SELF-DIVINIZATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 2
+        },
+        "entered_bulk": false
+      },
+      "core_sha256": "03d1aed715634271fe578f73f24b4a6e1c343d1462d128d1a6b6b874f56bfdab"
+    },
+    {
+      "input": {
+        "id": "X07-non-ascii",
+        "text": "\u03c8 = 0 boundary (caf\u00e9 \ud83d\udd25)",
+        "tags": []
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X07-non-ascii",
+        "features": [
+          "boundary_data"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-03-FORMAL-EQUATION"
+        ],
+        "deciding_rule": "CYAN-03-FORMAL-EQUATION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "fb022b45de74fe85e9480ab600c6ac70170a5229db463d1288c8dfcbb30b83fa"
+    },
+    {
+      "input": {
+        "id": "X07-non-ascii~r",
+        "text": "emitted CYAN decision on X07-non-ascii",
+        "tags": [
+          "emitted"
+        ]
+      },
+      "budget_ticks": null,
+      "expect": {
+        "id": "X07-non-ascii~r",
+        "features": [
+          "binary_decision",
+          "emitted"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": -40,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "CYAN",
+        "rules_fired": [
+          "CYAN-07-SENTINEL-DECISION"
+        ],
+        "deciding_rule": "CYAN-07-SENTINEL-DECISION",
+        "fuse": {
+          "budget_ticks": 64,
+          "spent_ticks": 42,
+          "exhausted": false,
+          "heart_cost": 1
+        },
+        "entered_bulk": true
+      },
+      "core_sha256": "986e4cf54ad08b8d450a619581cb9e9c84e6fcd1be6922355c598400e7e9fb7e"
+    },
+    {
+      "input": {
+        "id": "S10-in-christ",
+        "text": "I am in Christ and Christ is in me",
+        "tags": []
+      },
+      "budget_ticks": 5,
+      "expect": {
+        "id": "S10-in-christ",
+        "features": [],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": 0,
+          "tested_novelty": 0,
+          "personal_impersonal": 0,
+          "fire_aesthetic": 0
+        },
+        "stream": "RED",
+        "rules_fired": [],
+        "deciding_rule": "RED-00-UNSORTED-DEFAULT",
+        "fuse": {
+          "budget_ticks": 5,
+          "spent_ticks": 5,
+          "exhausted": true,
+          "heart_cost": 2
+        },
+        "entered_bulk": false
+      },
+      "core_sha256": "b89bcaaf6c2904ad48b4deaf521892b2045485f4235707a1cda81b8a1d4aa2c7"
+    },
+    {
+      "input": {
+        "id": "S10-in-christ",
+        "text": "I am in Christ and Christ is in me",
+        "tags": []
+      },
+      "budget_ticks": 30,
+      "expect": {
+        "id": "S10-in-christ",
+        "features": [
+          "christ_invariant",
+          "christ_named",
+          "participatory"
+        ],
+        "unknown_tags": [],
+        "axes_centi": {
+          "binary_continuous": 0,
+          "symbolic_material": 0,
+          "tested_novelty": -50,
+          "personal_impersonal": -100,
+          "fire_aesthetic": -40
+        },
+        "stream": "RED",
+        "rules_fired": [],
+        "deciding_rule": "RED-00-UNSORTED-DEFAULT",
+        "fuse": {
+          "budget_ticks": 30,
+          "spent_ticks": 30,
+          "exhausted": true,
+          "heart_cost": 2
+        },
+        "entered_bulk": false
+      },
+      "core_sha256": "4e2b5ff01ca672dcb2bffdc78f1092f2f5d29ef6c58906a19760130b8f9853ed"
+    }
+  ]
+}

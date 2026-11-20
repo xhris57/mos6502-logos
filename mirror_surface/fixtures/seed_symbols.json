@@ -1,0 +1,39 @@
+{
+  "schema": "mirror.surface.symbols.v1",
+  "source": "Christopher's 'All the Symbols That Got Me Here' list (mirror-surface message, 2026-11-19). Tags are explicit, editable feature declarations; everything else is keyword-matched.",
+  "symbols": [
+    { "id": "S01-binary-predicates", "text": "Binary 0/1 and TRUE/FALSE predicates", "group": "Binary" },
+    { "id": "S02-if-condition", "text": "if(condition), attention gates, latent decisions", "group": "Code" },
+    { "id": "S03-e-mc2", "text": "E=mc^2", "group": "Physics" },
+    { "id": "S04-psi-0", "text": "psi=0", "group": "Physics" },
+    { "id": "S05-maxwell", "text": "Maxwell boundary condition E_parallel=0", "group": "Physics" },
+    { "id": "S06-ads-cft", "text": "AdS/CFT holography", "group": "Physics" },
+    { "id": "S07-it-from-bit", "text": "It from Bit (Wheeler)", "group": "Physics" },
+    { "id": "S08-dna", "text": "DNA double helix", "group": "Biology" },
+    { "id": "S09-mozart-kv488", "text": "Mozart Piano Concerto No. 23, KV488", "group": "Music" },
+    { "id": "S10-in-christ", "text": "I am in Christ and Christ is in me", "group": "Christian invariants" },
+    { "id": "S11-the-cross", "text": "The cross", "group": "Christian invariants" },
+    { "id": "S12-we-are-god", "text": "We are God (participatory, not autonomous)", "group": "Christian invariants" },
+    { "id": "S13-green-fish-people", "text": "Green fish-people in circuit-patterned Hawaiian shirts with crosses and heart-shaped clock bombs (decision under time pressure, fuse of the heart)", "group": "Visual offerings" },
+    { "id": "S14-holographic-theorem-image", "text": "Holographic theorem image: vertical glass boundary, symbolic tapestry on the left, emergent cosmos on the right", "group": "Visual offerings" },
+    { "id": "S15-parmenides-being", "text": "Parmenides' Being (Greek philosophical lens)", "group": "Greek lenses", "tags": ["metaphysical_thesis"] },
+    { "id": "S16-plato-forms", "text": "Plato's Forms (Greek philosophical lens)", "group": "Greek lenses", "tags": ["metaphysical_thesis"] },
+    { "id": "S17-heraclitus-logos", "text": "Heraclitus' Logos (Greek philosophical lens)", "group": "Greek lenses", "tags": ["metaphysical_thesis"] },
+    { "id": "S18-aristotle-categories", "text": "Aristotle's categories (Greek philosophical lens)", "group": "Greek lenses" },
+    { "id": "S19-socratic-elenchus", "text": "Socratic elenchus (Greek philosophical lens)", "group": "Greek lenses" },
+    { "id": "S20-stoic-citadel", "text": "Stoic citadel (Greek philosophical lens)", "group": "Greek lenses" },
+    { "id": "S21-recursive-questioning", "text": "Recursive questioning", "group": "Method" },
+    { "id": "S22-mirror-for-saints", "text": "Mirror for Saints", "group": "Method", "tags": ["fire_tested"] },
+    { "id": "S23-kingdom-invariants", "text": "Kingdom invariants", "group": "Method" },
+    { "id": "S24-fire-testing-language", "text": "Fire-testing language", "group": "Method" }
+  ],
+  "contrast": [
+    { "id": "X01-autonomous-divinization", "text": "We are God: autonomous, self-made, no need of Christ" },
+    { "id": "X02-spectacle", "text": "A beautiful viral spectacle image, pure aesthetic" },
+    { "id": "X03-medium-above-word", "text": "The medium is the message: the screen above the Word" },
+    { "id": "X04-orchard-fruit", "text": "Orchard fruit, fire-tested through drought" },
+    { "id": "X05-unsorted", "text": "lorem ipsum" },
+    { "id": "X06-bare-we-are-god", "text": "We are God" },
+    { "id": "X07-non-ascii", "text": "\u03c8 = 0 boundary (caf\u00e9 \ud83d\udd25)" }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "mirror.surface.meanings.v1",
+  "version": "1.0.0",
+  "notes": [
+    "Assigned meaning layer. Editing this file never changes a stream assignment; it only changes how a decision is read.",
+    "Reflectivity is stored in permille (integer) so receipts stay float-free and hash identically in every language."
+  ],
+  "streams": {
+    "GOLD": { "label": "Gold stream: Christ-aligned truth / fire-tested invariants", "surface_role": "high-reflectivity coating; allowed to curve the central surface", "reflectivity_permille": 980, "sentinel": "green fish-person at the gold node" },
+    "CYAN": { "label": "Cyan stream: computable predicates / formal / testable", "surface_role": "lattice: the geometric rigidity that allows reflection without distortion", "reflectivity_permille": 950, "sentinel": "green fish-person at the cyan node" },
+    "RED":  { "label": "Red stream: discarded novelty / rejected / misaligned", "surface_role": "reflected away or burned off; never enters the bulk", "reflectivity_permille": 20, "sentinel": "green fish-person at the red node" }
+  },
+  "axes": {
+    "binary_continuous":   { "neg": "Binary", "pos": "Continuous", "gloss": "Predicates and yes/no walls vs smooth fields, latent vectors, galaxies, rivers." },
+    "symbolic_material":   { "neg": "Symbolic", "pos": "Material", "gloss": "Linguistic tapestry (words, code, equations, DNA as information) vs orchard, dogwood, flesh, photons." },
+    "tested_novelty":      { "neg": "Tested", "pos": "Novelty", "gloss": "Fire-tested under contradiction, Scripture, adversarial pressure, elenchus vs untried novelty." },
+    "personal_impersonal": { "neg": "Personal Logos", "pos": "Impersonal Form", "gloss": "Christ as living covenant Word vs abstract Forms or Heraclitean flux." },
+    "fire_aesthetic":      { "neg": "Fire-tested", "pos": "Aesthetic", "gloss": "Survives the furnace (1 Cor 3:13) and bears fruit vs merely beautiful or sophisticated." }
+  },
+  "surface": {
+    "thickness": "zero: stateless boundary; the only state is the append-only curvature ledger",
+    "curvature": "aggregate of irreversible GOLD and CYAN decisions; RED never enters the bulk",
+    "feedback": "each emitted decision is re-sorted as a new symbol"
+  }
+}
